@@ -1,0 +1,89 @@
+    <%- include("partials/head") %>
+
+    <!-- HEADER -->
+    <%- include("partials/header") %>
+
+    <main>
+        <div class="main_container_project_gallery">
+            <nav>
+                <div class="gallery_navbar">
+                    <h3>Order by:</h3>
+                    <ul>
+                        <li> <a href="#">> Last uploaded</a> </li>
+                        <li> <a href="#">> Date of creation</a> </li>
+                        <li> <a href="#">> Alphabetic order</a> </li>
+                    </ul>
+
+                    <h3>Tags</h3>
+                    <form class="gallery_form" action="/gallery" method="GET">
+                        <ul class="tags_container">
+                            <li> <input type="checkbox" name="tags_casa" id="">Finanzas</li>
+                            <li> <input type="checkbox" name="tags_depto" id="">Ahorros</li>
+                            <li> <input type="checkbox" name="tags_pileta" id="">Real-estate</li>
+                            <li> <input type="checkbox" name="tags_country" id="">Plazos fijos</li>
+                            <li> <input type="checkbox" name="tags_casa" id="">Jubilaciones</li>
+                            <li> <input type="checkbox" name="tags_casa" id="">Stocks</li>
+                            <li> <input type="checkbox" name="tags_casa" id="">Etc</li>
+                            <li> <input type="checkbox" name="tags_casa" id="">Etc</li>
+                        </ul>
+                        <button class="tags_button" type="submit">Submit</button>
+                    </form>
+                </div>
+            </nav>
+
+            <div class="content_gallery">
+                <h2>Galería de cursos</h2>
+
+                <div class="video_container">
+                    <!-- <video src="url(https://youtu.be/WUYB-FnCRo8)" muted></video> -->
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/WUYB-FnCRo8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    
+                
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/ADqFFRuU-Ns" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  
+
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/CroBbYhWCLQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                   
+
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/DoEmGKU2TTs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                   
+
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/wEQTjSC39Eg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    
+
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/WUYB-FnCRo8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    
+
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/WUYB-FnCRo8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    
+
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/WUYB-FnCRo8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    
+
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/WUYB-FnCRo8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    
+
+                </div>
+
+            </div>
+        </div>
+        
+
+
+    </main>
+
+    <footer></footer>
+
+    <!-- <script>
+        let video = document.querySelectorAll('iframe');
+
+        video.forEach(play => play.addEventListener('click' , () =>{
+            play.classList.toggle('active');
+        }));
+
+    </script> -->
+
+        
+</body>
+
+</html>

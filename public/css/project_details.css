@@ -1,0 +1,20 @@
+/* PROJECT DETAILS */
+.project_details{
+    padding: var(--box_padding);
+    border: var(--box_border);
+    border-radius: var(--box_border_radius);
+    background-color: rgb(128, 151, 223);
+}
+
+.options_after_create{
+    display: flex;
+    flex-direction: column;
+    padding: var(--box_padding);
+    border: var(--box_border);
+    border-radius: var(--box_border_radius);
+    background-color: rgba(128, 151, 223, 0.7);
+}
+
+.second_section_booked{
+    margin-top: 80px;
+}

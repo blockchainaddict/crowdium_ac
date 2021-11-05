@@ -1,0 +1,31 @@
+    <%- include("partials/head") %>
+
+<main>
+
+    <div class="main_booked">
+        <div class="booked_results">
+            <h2>Nuevo proyecto comenzado!</h2>
+            <div class="project_details">
+                <p> <b>Detalles</b> </p>
+                <p> <b>Tipo:</b>  <%= info.type_of_project %></p>
+                <p> <b>Fecha de entrega:</b>  <%= info_time.delivery %></p>
+                <p> <b>Comentarios: </b> <%= info.comments  %> </p>
+            </div>
+            <p>Nuestros asesores te contactarán con noticias a la brevedad</p>
+        </div>
+        
+        <section class="second_section_booked">
+            <div class="options_after_create">
+
+                <a class="booked_links" href="/">Home</a>
+                <a class="booked_links" href="/">Seguimiento</a>
+                <a class="booked_links" href="/create">Crear nuevo proyecto</a>
+            </div>
+        </section>
+    </div>
+    
+    </main>
+
+    <%- include("partials/footer") %>
+
+</html>

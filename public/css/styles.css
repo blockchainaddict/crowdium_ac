@@ -1,0 +1,46 @@
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,500;1,100;1,200;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap');
+
+/* IMPORTS */
+@import 'header.css';
+@import 'main.css';
+@import 'form.css';
+@import 'project_details.css';
+@import 'project_gallery.css';
+@import 'footer.css';
+
+/* ALL */
+*{
+    /* margin: 0; */
+    box-sizing: border-box;
+    font-family: "Roboto";;
+}
+
+body{
+    margin: 0;
+}
+
+/* VARIABLES */
+:root{
+    --box_padding: 20px;
+    --box_border_radius: 10px;
+    --box_border: 1px solid rgb(210, 208, 208);
+
+    --gray: rgb(211, 208, 208);
+
+    --blue: rgb(17, 151, 235);
+    --orange: #fea41b;
+    --violet: #736ff4;
+    --black: #3e3e3e;
+    --gray: #b2bdc4;
+    --graylight: #d2d2d2;
+}
+
+/* MOBILE */
+
+@media (max-width:600px){
+    
+}

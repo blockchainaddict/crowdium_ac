@@ -1,0 +1,29 @@
+    <!-- Head -->
+    <%- include("partials/head") %>
+
+    <!-- Header -->
+    <%- include("partials/header") %>
+
+    <main>
+        <div class="projects_container">
+            <% for(let i=0; i<projects.length; i++){ %> 
+                <a href="try/<%= projects[i].id %>"><div class="project_wrapper">
+                    <p>Project ID: <%= projects[i].id %> </p>
+                    <p>Estado del proyecto: en post-producción</p>
+                    <p>Se debe entregar el: <%=projects[i].type_of_project%></p>
+                    <a href="try/<%= projects[i].id %>"> <b>Ver</b> </a>
+                </div></a>
+                
+                <% } %> 
+
+        </div>
+        
+        
+
+    </main>
+
+    <!-- Footer -->
+    <%- include("partials/footer") %>
+   
+</body>
+</html>

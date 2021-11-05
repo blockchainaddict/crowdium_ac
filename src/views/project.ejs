@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="/css/styles.css">
+    </head>
+
+    <body>
+        <!-- Header -->
+        <%- include("partials/header") %>
+
+        <main>
+            <div class="project_wrapper">
+                <p>Project ID: <%= project.id %> </p>
+                <p>State of the project: en post-producción</p>
+                <p>Delivery date: <%=project.delivery_date%></p>
+                <a href="https://pibox.com/app/v/727162"> <b>See in Pibox</b> </a>
+            </div>
+            
+
+        </main>
+        
+
+
+
+
+        <!-- Footer -->
+        <%- include("partials/footer") %>
+    
+    </body> 
+
+</html>

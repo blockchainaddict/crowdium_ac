@@ -1,0 +1,12 @@
+[
+ {
+  "id": 0,
+  "email": "sudo@housify.com",
+  "password": "$2a$10$HLFJf4WOYvJO/YA229YIiuiKdgaLJaPF7uiY9PBWIte68YFQZ/.Xa"
+ },
+ {
+  "id": 1,
+  "email": "agusvb@hotmail.com",
+  "password": "$2a$10$7Kcd2j/m3DkELMfnVP8Paur2nIis0pB2zSxh2AVx1tJk2lec4cXWG"
+ }
+]

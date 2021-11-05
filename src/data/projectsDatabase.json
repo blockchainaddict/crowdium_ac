@@ -1,0 +1,58 @@
+[
+ {
+  "id": 1,
+  "type_of_project": "nodrone_video",
+  "date": "2021-10-28T17:58",
+  "delivery_date": "31-10-2021",
+  "days_to_deadline": true,
+  "house_m2": "",
+  "house_floors": "",
+  "house_rooms": "",
+  "house_bedrooms": "",
+  "house_bathrooms": "",
+  "comments": "",
+  "img": "default-image.png"
+ },
+ {
+  "id": 2,
+  "type_of_project": "capacitacion",
+  "date": "2021-10-24T17:58",
+  "delivery_date": "27-10-2021",
+  "days_to_deadline": true,
+  "house_m2": "",
+  "house_floors": "",
+  "house_rooms": "",
+  "house_bedrooms": "",
+  "house_bathrooms": "",
+  "comments": "",
+  "img": "default-image.png"
+ },
+ {
+  "id": 3,
+  "type_of_project": "drone_video",
+  "date": "2021-10-28T17:41",
+  "delivery_date": "31-10-2021",
+  "days_to_deadline": false,
+  "house_m2": "9",
+  "house_floors": "9",
+  "house_rooms": "9",
+  "house_bedrooms": "9",
+  "house_bathrooms": "9",
+  "comments": "asd",
+  "img": "product-1635367300684.jpeg"
+ },
+ {
+  "id": 4,
+  "type_of_project": "nodrone_video",
+  "date": "2021-10-28T22:49",
+  "delivery_date": "31-10-2021",
+  "days_to_deadline": false,
+  "house_m2": "4",
+  "house_floors": "5",
+  "house_rooms": "2",
+  "house_bedrooms": "4",
+  "house_bathrooms": "2",
+  "comments": "asd",
+  "img": "default-image.png"
+ }
+]

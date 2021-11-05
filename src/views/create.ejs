@@ -1,0 +1,106 @@
+
+
+	<%- include("partials/head") %>
+
+	<%- include("partials/header") %>
+
+	<main>
+		<div class="main_index">
+			<section class="index_section1">
+				<h2>Create New Project</h2>
+
+				<form class="project_input_form" action="/create" method="POST" enctype="multipart/form-data">
+					<fieldset class="project_i_f_field" id="fieldset1">
+						<legend>Type of Project</legend>
+						<div class="label_input_pair">
+							<label for="type_of_project">Audio & Video</label>
+							<input type="radio" name="type_of_project" id="drone_video" value="drone_video">
+						</div>
+						<div class="label_input_pair">
+							<label for="type_of_project">Audio</label>
+							<input type="radio" name="type_of_project" id="no_drone_video" value="nodrone_video">
+						</div>
+						<div class="label_input_pair">
+							<label for="type_of_project">Other</label>
+							<input type="radio" name="type_of_project" id="capacitaciones" value="capacitacion">
+						</div>
+					</fieldset>
+
+					<br>
+
+					<fieldset class="project_i_f_field short_fieldset">
+						
+						<legend>Location</legend>
+						<div class="label_input_pair">
+							<label for="address_city">City</label>
+							<input type="text" name="address_city" class="address_street" required>
+						</div>
+						<div class="label_input_pair">
+							<label  for="address_street">Street</label>
+							<input type="text" name="address_street" class="address_street" required>
+						</div>
+				
+					</fieldset>
+
+					<fieldset class="project_i_f_field">
+						<legend>Date</legend>
+						<input type="datetime-local" name="date" class="date_time" required>
+					</fieldset>
+					
+					
+
+					<br>
+
+					<fieldset class="project_i_f_field">
+						<legend>Details</legend>
+						<div class="label_input_pair">
+							<label for="meters">Duration</label>
+							<input type="number" name="meters" class="number_input">
+						</div>
+						<div class="label_input_pair">
+							<label for="floors">Team size</label>
+							<input type="number" name="floors" class="number_input">
+						</div>
+						 <div class="label_input_pair">
+							<label for="rooms">Details</label>
+							<input type="number" name="rooms" class="number_input">
+						</div>
+						<div class="label_input_pair">
+							<label for="bedrooms">Other details</label>
+							<input type="number" name="bedrooms" class="number_input">
+						</div>
+						<div class="label_input_pair">
+							<label for="bathrooms">Other details</label>
+							<input type="number" name="bathrooms" class="number_input">
+						</div>
+					</fieldset>
+
+					<br>
+
+					<fieldset class="project_i_f_field fieldsetFile">
+						<label for="project_picture"></label>
+						<input type="file" name="project_picture" id="project_picture">
+					</fieldset>
+
+					<fieldset class="project_i_f_field">
+						<label for="comments">Comments</label>
+						<input type="text" name="comments" id="comments" class="comments_input">
+					</fieldset>
+					<button type="submit">Create</button>
+			
+				</form>
+			</section>
+		</div>
+		
+
+	</main>
+
+	<footer>
+		
+
+	</footer>
+	
+
+</body>
+
+</html>

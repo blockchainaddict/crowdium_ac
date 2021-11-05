@@ -1,0 +1,40 @@
+
+
+	<%- include("partials/head") %>
+
+	<%- include("partials/header") %>
+
+	<main>
+		<div class="main_index">
+			<section class="index_section1">
+				<h2>Crear usuario</h2>
+
+				<form class="project_input_form" action="/new-user" method="POST">
+					<fieldset class="project_i_f_field" id="fieldset1">
+						<legend>Write your Email and Password</legend>
+						<div class="label_input_pair">
+							<label for="email">Email:</label>
+							<input type="email" name="email" id="email">
+						</div>
+						<div class="label_input_pair">
+							<label for="password">Password:</label>
+							<input type="password" name="password" id="password">
+						</div>
+					</fieldset>
+					<button class="login_button" type="submit">Submit</button>
+			
+				</form>
+			</section>
+		</div>
+		
+
+	</main>
+
+	<footer>
+
+	</footer>
+	
+
+</body>
+
+</html>

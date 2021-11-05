@@ -1,0 +1,61 @@
+	<%- include("partials/head") %>
+
+	<%- include("partials/header") %>
+
+	<main class="main_not_index">
+		<div class="main_index">
+			<section class="index_section1">
+				<h2>Log in</h2>
+
+				<form class="project_input_form" action="/login" method="POST">
+					
+					<fieldset class="project_i_f_field" id="fieldset1">
+						<legend>Email and password</legend>
+						<div class="label_input_pair">
+							
+							<label for="email">Email:</label>
+							<input  type="email" name="email" id="email" placeholder="email" <% if(locals.oldData){%> value= "<%=oldData.email%>" <%}%> >
+						</div>
+						<% if(locals.errors && errors.email){%>
+							<p class="errors" style="color:red">
+								<%=errors.email.msg%>
+							</p>
+						<% } %>
+						<div class="label_input_pair">
+							<label for="password">Password:</label>
+							<input type="password" name="password" id="password" placeholder="password">
+							
+						</div>
+						<% if(locals.errors && errors.password){%>
+							<p class="errors" style="color:red">
+								<%=errors.password.msg%>
+							</p>
+						<% } %>
+						<div class="label_input_pairB">
+							<input type="checkbox" name="remember">
+							<label for="remember">Remember me</label>
+							
+						</div>
+					</fieldset>
+					
+					<button class="login_button" type="submit">Submit</button>
+
+					<p class="new_user_a">  <a href="/new-user">Create new user</a> </p>
+			
+				</form>
+				
+				
+			</section>
+		</div>
+		
+
+	</main>
+
+	<footer>
+
+	</footer>
+	
+
+</body>
+
+</html>

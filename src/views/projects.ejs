@@ -1,0 +1,38 @@
+    <!-- Head -->
+    <%- include("partials/head") %>
+
+    <!-- Header -->
+    <%- include("partials/header") %>
+
+    <main>
+        <div class="projects_container">
+            <% if(projects.length > 0){
+                for(let i=0; i<projects.length; i++){ %>
+                <a href="project/<%= projects[i].id %>">
+                    <div class="project_wrapper" <% if(!projects[i].days_to_deadline){%> 
+                            style="background-color:rgb(200,10,10)" 
+                        <% } %> >
+                        <p>Project ID: <%= projects[i].id %></p>
+                        <p>State: in post</p>
+                        <p>Date of delivery: <%=projects[i].delivery_date%></p>
+                        <a href="https://pibox.com/app/v/727162"> <b>See in Pibox</b> </a>
+                        <div class="projects_image_wrapper"><img class="projects_img" src="../images/<%= projects[i].img%>" alt="img">
+                    </div>
+                </div></a>
+                
+                <% } 
+            }
+            else{%> <p>No projects yet.</p>
+                    <p> <a href="/create">Create one</a> </p> <%}%>
+
+        </div>
+        
+        
+
+    </main>
+
+    <!-- Footer -->
+    <%- include("partials/footer") %>
+   
+</body>
+</html>
