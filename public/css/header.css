@@ -19,7 +19,7 @@ header{
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    margin: 0 30px;
+    margin: 0 20px;
 }
 
 .index_header_wrapper h1{
@@ -74,5 +74,8 @@ li{
     }
     .home_link{
         width: auto;
+    }
+    .index_header_wrapper{
+        justify-content: center;
     }
 }

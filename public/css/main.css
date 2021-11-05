@@ -33,7 +33,7 @@
 }
 
 .circle{
-    margin-top: 40px;
+    /* margin-top: 40px; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -154,7 +154,7 @@
 }
 
 .badge_logo img{
-    width: 160px;
+    width: 30vw;
     transform: rotate(-35deg);
 }
 
@@ -277,4 +277,18 @@
     .projects_image_wrapper{
         display: none;
     }
+
+    .user_links{
+        display: none;
+    }
+    .about_wrapper{
+        margin: 10px 20px;
+    }
+    .about p{
+        font-size: .9em;
+    }
+    .badge_logo{
+        display: none;
+    }
+
 }

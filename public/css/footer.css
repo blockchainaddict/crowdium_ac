@@ -4,6 +4,6 @@
     bottom: 0;
     border-top: var(--box_border);
     background-color: #e5e5e5;
-    background-color: #f9d2dc;
+    background-color: var(--graylight);
 
 }
