@@ -299,8 +299,7 @@
         background-image: url("/images/kwbck4.jpg");
     
     
-        width: 100vw;
-        height: 621px;
+        width: 100%;
         position: absolute;
         z-index: -1;
         top: 109px;
