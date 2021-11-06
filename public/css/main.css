@@ -69,6 +69,9 @@
     top: 109px;
     left: 0;
 }
+#banner_img{
+    display: none;
+}
 
 .background-texture {
     background: linear-gradient(
@@ -301,16 +304,28 @@
     }
 
     .background-image{
-        background-image: url("/images/bckHouseMobile.jpg");
+        display: none;
+        /* background-image: url("/images/default-image.png");
     
     
         width: 100%;
         max-height: 440px;
         position: absolute;
+        z-index: -2;
+        top: 109px;
+        left: 0;
+        overflow: hidden; */
+    }
+    
+    #banner_img{
+        display: inline;
+        position: absolute;
         z-index: -1;
         top: 109px;
         left: 0;
+        width: 100%;
         overflow: hidden;
+
     }
 
     .about_wrapper{
@@ -334,4 +349,12 @@
     .circle h2{
         font-size: 1.5em;
     }
+    .background-texture{
+        height: 408px;
+    }
+    /* #banner_img{
+        height: 420;
+        width: auto;
+    } */
+        
 }
