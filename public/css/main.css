@@ -301,7 +301,7 @@
     }
 
     .background-image{
-        background-image: url("/images/kwbck4.jpg");
+        background-image: url("/images/bckHouseMobile.jpg");
     
     
         width: 100%;
@@ -322,6 +322,10 @@
 
     .cursos_populares_wrapper{
         margin-top: 20px;
+    }
+
+    .circle h3{
+        text-align: center;
     }
 
 }
