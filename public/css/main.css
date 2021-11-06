@@ -151,10 +151,11 @@
     position: relative;
     left: 28vw;
     bottom: 50px;
+    width: 50vw;
 }
 
 .badge_logo img{
-    width: 30vw;
+    width: 15vw;
     transform: rotate(-35deg);
 }
 
@@ -270,7 +271,7 @@
 
 
 
-@media (max-width:600px){
+@media (max-width:650px){
     .home_link{
         width: auto;
     }
@@ -284,11 +285,26 @@
     .about_wrapper{
         margin: 10px 20px;
     }
+    .about{
+        width: 80%;
+    }
     .about p{
         font-size: .9em;
     }
     .badge_logo{
         display: none;
+    }
+
+    .background-image{
+        background-image: url("/images/kwbck4.jpg");
+    
+    
+        width: 100vw;
+        height: 621px;
+        position: absolute;
+        z-index: -1;
+        top: 109px;
+        left: 0;
     }
 
 }
