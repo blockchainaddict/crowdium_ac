@@ -11,7 +11,7 @@
 					<form class="project_input_form" action="/login" method="POST">
 			
 						<fieldset class="project_i_f_field" id="fieldset1">
-							<legend>Email and password</legend>
+							<legend>Regístrate o inicia sesión para poder ingresar a Crowdium.</legend>
 							<div class="label_input_pair">
 			
 								<label for="email">Email:</label>
@@ -39,14 +39,15 @@
 							</div>
 						</fieldset>
 			
-						<button class="login_button log" type="submit">Submit</button>
-						<p class="new_user_a">  <a href="/new-user">Create new user</a> </p>
+						<button class="login_button log" type="submit">Iniciar Sesión</button>
+
+						<br>
+						<p>¿No estás registrado?</p>
+						<p class="new_user_a">  <a href="/new-user">Crear nuevo usuario</a> </p>
 			
 					</form>
 
-					<div class="img_login">
-						<img src="/images/login.jpg" alt="">
-					</div>
+					
 			
 			
 				</section>
@@ -58,11 +59,4 @@
 
 	</main>
 
-	<footer>
-
-	</footer>
-	
-
-</body>
-
-</html>
+	<%- include('partials/footer') %>

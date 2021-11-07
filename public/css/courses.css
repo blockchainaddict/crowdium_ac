@@ -1,0 +1,22 @@
+.courses_wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.course{
+    width: 250px;
+    text-align: center;
+}
+
+.course_title{
+    height: 2em;
+}
+
+.course img{
+    width: 80%;
+}
+
+.course_img{
+    padding-top: 20px;
+}

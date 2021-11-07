@@ -69,6 +69,9 @@ const mainController = {
 	},
 	startHere: (req,res) =>{
 		res.send('START HERE');
+	},
+	courses: (req,res) =>{
+		res.render('courses.ejs');
 	}
 };
 

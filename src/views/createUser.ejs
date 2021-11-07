@@ -8,10 +8,18 @@
 		<div class="main_wrapper_n">
 			<div class="main_container">
 				<section class="index_section1">
-					<h2>Crear usuario</h2>
+					<h2>Bienvenido a <br> Crowdium Academy</h2>
 					<form class="project_input_form" action="/new-user" method="POST">
 						<fieldset class="project_i_f_field" id="fieldset1">
-							<legend>Write your Email and Password</legend>
+							<legend>Crea tu usuario</legend>
+							<div class="label_input_pair">
+								<label for="first_name">Nombre:</label>
+								<input type="first_name" name="first_name" id="first_name">
+							</div>
+							<div class="label_input_pair">
+								<label for="last_name">Apellido:</label>
+								<input type="last_name" name="last_name" id="last_name">
+							</div>
 							<div class="label_input_pair">
 								<label for="email">Email:</label>
 								<input type="email" name="email" id="email">
@@ -20,10 +28,17 @@
 								<label for="password">Password:</label>
 								<input type="password" name="password" id="password">
 							</div>
+							<div class="label_input_pair">
+								<label for="phone_number">Teléfono:</label>
+								<input type="phone_number" name="phone_number" id="phone_number">
+							</div>
 						</fieldset>
 						<button class="login_button log" type="submit">Submit</button>
 			
 					</form>
+
+					
+
 				</section>
 			</div>
 		</div>
@@ -31,11 +46,4 @@
 
 	</main>
 
-	<footer>
-
-	</footer>
-	
-
-</body>
-
-</html>
+	<%- include('partials/footer')  %> 

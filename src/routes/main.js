@@ -76,5 +76,6 @@ router.get('/try', projectsController.projects);
 router.get('/try/:id', projectsController.project);
 
 router.get('/start-here', mainController.startHere);
+router.get('/courses', mainController.courses);
 
 module.exports = router;

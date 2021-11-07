@@ -8,6 +8,7 @@
     position: sticky;
     left: 0;
     border-right: var(--box_border);
+
 }
 
 .tags_container{
@@ -16,10 +17,12 @@
 }
 
 .tags_button{
-    color: royalblue;
+    color: white;
+    background-color: var(--black);
     margin-left: 40%;
     border: none;
     border-radius: 15px;
+    padding: 5px 10px;
 }
 
 .content_gallery{
@@ -66,10 +69,15 @@ iframe .active{
     }
     .gallery_navbar{
         width: auto;
-    }
-    .main_container_project_gallery ul{
-        text-align: center;
-        padding: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
 
+    .tags_container{
+        width: max-content;
+    }
+
+    .main_container_project_gallery ul{
+        padding: 0;
+    }
 }
