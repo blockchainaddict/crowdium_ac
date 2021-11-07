@@ -82,6 +82,7 @@
     background-attachment: fixed;
 
 }
+
 .mobile_image{
     display: none;
 }
@@ -316,6 +317,7 @@
     }
 
     .background-image{
+        
         -webkit-background-size: inherit;
         -moz-background-size: inherit;
 
@@ -385,6 +387,11 @@
         height: 420;
         width: auto;
     } */
+    .background-image{
+        background-image: url("/images/backB.jpg");
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+    }
 
         
 }
