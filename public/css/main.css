@@ -288,7 +288,7 @@
 
 
 
-@media (max-width:650px){
+@media (max-width:693px){
     .main_banner_wrapper{
         justify-content:unset;
         min-height: min-content;
@@ -297,10 +297,6 @@
         width: auto;
     }
     .projects_image_wrapper{
-        display: none;
-    }
-
-    .user_links{
         display: none;
     }
     .about_wrapper{
@@ -391,9 +387,7 @@
         background-image: url("/images/backB.jpg");
         -webkit-background-size: cover;
         -moz-background-size: cover;
-    }
-
-        
+    }  
 }
 
 

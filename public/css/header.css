@@ -14,7 +14,7 @@ header{
     height: auto;
 }
 
-.index_header_wrapper{
+.navbar{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -68,9 +68,10 @@ li{
     color: rgb(142, 165, 233);
 }
 
-@media (max-width:600px){
+@media (max-width:693px){
     .user_links{
         width: auto;
+        justify-content: left;
     }
     .home_link{
         width: auto;
@@ -78,4 +79,62 @@ li{
     .index_header_wrapper{
         justify-content: center;
     }
+    /* HAMB menu */
+    .navbar__toggle .bar {
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+        background: rgb(0, 0, 0);
+        display: block;
+        cursor: pointer;
+        position: relative;
+        top: 0;
+    
+    }
+    #mobile-menu {
+        position: absolute;
+        top: 38px;
+        right: 5%;
+        transform: translate(5%, 20%);
+      }
+      #mobile-menu.is-active .bar:nth-child(2) {
+        opacity: 0;
+      }
+    
+      #mobile-menu.is-active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+    
+      #mobile-menu.is-active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+
+      /* Actual links for mobile menu */
+      .user_links {
+        display: grid;
+        grid-template-columns: auto;
+        margin: 0;
+        width: 70%;
+        position: absolute;
+        top: -1000px;
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: -1;
+      }
+
+      .user_links.active {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: var(--blue);
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: 1;
+        height: 109px;
+        font-size: 1.2rem;
+        padding-left: 10px;
+      }
 }
+
+
