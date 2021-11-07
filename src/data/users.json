@@ -8,5 +8,10 @@
   "id": 1,
   "email": "agusvb@hotmail.com",
   "password": "$2a$10$7Kcd2j/m3DkELMfnVP8Paur2nIis0pB2zSxh2AVx1tJk2lec4cXWG"
+ },
+ {
+  "id": 2,
+  "email": "aaa@d",
+  "password": "$2a$10$Rc3zsSanMR5YQ.CGl2NkIuzf1chHhMvdYCyUUBinAIGkUg/PCP5Fq"
  }
 ]

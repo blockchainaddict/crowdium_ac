@@ -66,6 +66,9 @@ const mainController = {
 			return project.id == id;
 		})
 		res.render("project.ejs", {projects, project: project});
+	},
+	startHere: (req,res) =>{
+		res.send('START HERE');
 	}
 };
 

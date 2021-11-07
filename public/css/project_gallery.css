@@ -18,6 +18,8 @@
 .tags_button{
     color: royalblue;
     margin-left: 40%;
+    border: none;
+    border-radius: 15px;
 }
 
 .content_gallery{

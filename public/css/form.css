@@ -1,7 +1,6 @@
 /* FORM */
 .index_section1{
     width: 85%;
-    
 }
 
 section h2{
@@ -44,12 +43,13 @@ fieldset{
     padding: var(--box_padding);
     background-color: rgba(230, 230, 230, 0.3);
     text-align: center;
+    font-family: poppins;
 }
 
 .project_i_f_field{
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 120%;
     border: none;
     align-items: center;
 }
@@ -129,4 +129,22 @@ fieldset{
         flex-direction: column;
         align-items: center;
     }
+}
+
+.img_login{
+    position: absolute;
+    width: 100%;
+    top: 109px;
+    left: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.img_login img{
+    opacity: 0.2;
+    height: 100%;
+
 }

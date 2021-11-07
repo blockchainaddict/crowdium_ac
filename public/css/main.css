@@ -9,29 +9,38 @@
     position: relative;
    }
 
-/* ANI */
+.main_wrapper_n{
+    background: #0f0c29;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    background: linear-gradient(to right, #6391c9, #9fcdf5, #9fcdf5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 400px;
+}
 
-.main_index, .main_booked{
+.main_container{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.main_booked{
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 35%;
 }
 
-.main_not_index{
-    background: #0f0c29;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
-    background: linear-gradient(to right, #6391c9, #9fcdf5, #9fcdf5);
-
-}
 
 .home_main_wrapper{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 420px;
-    
+    min-height: 420px; 
 }
 
 .circle{
@@ -57,16 +66,21 @@
 
 .background-image{
     background-image: url("/images/kwbck4.jpg");
-    background-size: cover;
+    /* background-size: cover; */
     background-repeat: no-repeat;
     background-color: #252746;
     /* background-position: center; */
     width: 100%;
     height: 100%;
-    position: absolute;
     z-index: -1;
+    position: absolute;
     top: 0;
     left: 0;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+
+    background-attachment: fixed;
+
 }
 .mobile_image{
     display: none;
@@ -299,6 +313,13 @@
     }
     .badge_logo{
         display: none;
+    }
+
+    .background-image{
+        -webkit-background-size: inherit;
+        -moz-background-size: inherit;
+
+        background-attachment:inherit;
     }
 
     /* .background-image{

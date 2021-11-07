@@ -27,7 +27,11 @@
                     
                     <div class="home_button_wrapper">
                         <div class="button">
-                            <li class="user_link log"> <a href="#">Unite!</a></li>
+                            <% if(!locals.userLogged){%> 
+                                    <li class="user_link log"> <a href="/new-user">Unite!</a></li>
+                            <% }else{ %> 
+                                    <li class="user_link log"> <a href="/start-here">Comenzar!</a></li>
+                                <% } %> 
                         </div>
                     </div>
             
@@ -82,7 +86,7 @@
 
             <div class="home_button_wrapper">
                 <div class="button">
-                    <li class="user_link log"> <a href="#">Ver todos</a></li>
+                    <li class="user_link log"> <a href="/gallery">Ver todos</a></li>
                 </div>
             </div>
         </div>
