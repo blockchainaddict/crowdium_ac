@@ -391,6 +391,7 @@
         background-image: url("/images/backB.jpg");
         -webkit-background-size: cover;
         -moz-background-size: cover;
+        background-attachment: fixed;
     }
 
         
