@@ -18,5 +18,10 @@
   "id": 3,
   "email": "test@gmail.com",
   "password": "$2a$10$/TCfufWeq9f2ynjg4kUTLO9HsPwSFDqsk2Bzwxt5Ii9hgFbidnFse"
+ },
+ {
+  "id": 4,
+  "email": "lucho@gmail.com",
+  "password": "$2a$10$zCVFhJ8XqheYydhpomrY5u1GeNCdNYRMvf7a9CrPVjCu.JPdFf.g."
  }
 ]

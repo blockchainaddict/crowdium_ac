@@ -1,1 +1,26 @@
-<p>START HERE</p>
+<%- include('partials/head')%>
+ 
+<!-- Header -->
+<%- include("partials/header") %>
+    
+    <main>
+        <div class="my_courses_wrapper">
+            <h2 class="h2_courses">Empieza tu aventura financiera</h2>
+            <div class="my_courses_container">
+
+                <% for(let i=0;i<courses.length; i++){%>
+                    <div class="course">
+                        <div class="course_title">
+                            <p> <%= courses[i].title %> </p>
+                        </div>
+                        <div class="course_img">
+                            <img src="/images/<%=courses[i].img%>" alt="course_img">
+                        </div>
+                    </div>
+                <%} %>
+            
+            </div>
+        </div>
+    </main>
+
+<%- include('partials/footer')%>

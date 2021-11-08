@@ -72,13 +72,13 @@ const mainController = {
 		res.render("project.ejs", {projects, project: project});
 	},
 	startHere: (req,res) =>{
-		res.send('START HERE');
+		res.render('start_here.ejs', {courses, userLogged:req.session.userToLog});
 	},
 	courses: (req,res) =>{
-		res.render('courses.ejs', {courses});
+		res.render('courses.ejs', {courses, userLogged:req.session.userToLog});
 	},
 	userCourses: (req,res) =>{
-		res.render('user_courses.ejs', {courses});
+		res.render('user_courses.ejs', {courses, userLogged:req.session.userToLog});
 	}
 };
 
