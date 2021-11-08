@@ -114,8 +114,9 @@ fieldset{
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    border-radius: 50px;
+    border-radius: 6px;
     width: 70%;
+    color: white;
 }
 
 .login_button:hover{
@@ -123,7 +124,7 @@ fieldset{
 }
 @media (max-width:1000px){
     .index_section1{
-        width: auto;
+        /* width: auto; */
     }
 
     .label_input_pair{
@@ -150,4 +151,19 @@ fieldset{
     opacity: 0.2;
     height: 100%;
 
+}
+
+@media (max-width:650px){
+    .main_container{
+        width: 100%;
+    }
+    .project_input_form{
+        border: none;
+        box-shadow: none;
+        background-color: rgba(230, 230, 230, 0);
+    }
+    .label_input_pairB{
+        justify-content: center;
+        align-items: center;
+    }
 }

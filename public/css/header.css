@@ -68,7 +68,7 @@ li{
     color: rgb(142, 165, 233);
 }
 
-@media (max-width:693px){
+@media (max-width:780px){
     .user_links{
         width: auto;
         justify-content: left;
@@ -115,7 +115,7 @@ li{
         display: grid;
         grid-template-columns: auto;
         margin: 0;
-        width: 70%;
+        width: 100%;
         position: absolute;
         top: -1000px;
         opacity: 1;
@@ -125,16 +125,22 @@ li{
 
       .user_links.active {
         position: absolute;
-        top: 0;
+        top: 110px;
         left: 0;
-        background: var(--blue);
+        background: white;
         opacity: 1;
         transition: all 0.5s ease;
         z-index: 1;
-        height: 109px;
-        font-size: 1.2rem;
+        /* height: 109px; */
+        font-size: 1.1rem;
         padding-left: 10px;
+        padding-bottom: 30px;
       }
+
+      .user_links.active .user_link{
+          margin-top: 20px;
+      }
+    
 }
 
 

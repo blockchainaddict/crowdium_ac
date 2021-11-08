@@ -5,75 +5,50 @@
     
     <main>
         <div class="courses_wrapper">
-            <div class="course">
-                <div class="course_title">
-                    <p>Conceptos básicos de finanzas</p>
+            <h2 class="h2_courses">Categorías</h2>
+            <div class="courses_categories">
+                <div class="course">
+                    <div class="course_title">
+                        <p>Finanzas</p>
+                    </div>
+                    <div class="course_img">
+                        <img src="images/-1.jpg" alt="course_img">
+                    </div>
                 </div>
-                <div class="course_img">
-                    <img src="images/default-image.png" alt="">
+                <div class="course">
+                    <div class="course_title">
+                        <p>Criptomonedas</p>
+                    </div>
+                    <div class="course_img">
+                        <img src="images/-2.jpg" alt="course_img">
+                    </div>
                 </div>
-            </div>
-
-            <div class="course">
-                <div class="course_title">
-                    <p>Ahorros</p>
-                </div>
-                <div class="course_img">
-                    <img src="images/default-image.png" alt="">
-                </div>
-            </div>
-            <div class="course">
-                <div class="course_title">
-                    <p>Cómo invertir</p>
-                </div>
-                <div class="course_img">
-                    <img src="images/default-image.png" alt="">
-                </div>
-            </div>
-            <div class="course">
-                <div class="course_title">
-                    <p>Bienes raíces</p>
-                </div>
-                <div class="course_img">
-                    <img src="images/default-image.png" alt="">
-                </div>
-            </div>
-            <div class="course">
-                <div class="course_title">
-                    <p>Conceptos básicos de finanzas</p>
-                </div>
-                <div class="course_img">
-                    <img src="images/default-image.png" alt="">
+                <div class="course">
+                    <div class="course_title">
+                        <p>Real-estate</p>
+                    </div>
+                    <div class="course_img">
+                        <img src="images/-3.jpg" alt="course_img">
+                    </div>
                 </div>
             </div>
 
-            <div class="course">
-                <div class="course_title">
-                    <p>Ahorros</p>
-                </div>
-                <div class="course_img">
-                    <img src="images/default-image.png" alt="">
-                </div>
-            </div>
-            <div class="course">
-                <div class="course_title">
-                    <p>Cómo invertir</p>
-                </div>
-                <div class="course_img">
-                    <img src="images/default-image.png" alt="">
-                </div>
-            </div>
-            <div class="course">
-                <div class="course_title">
-                    <p>Bienes raíces</p>
-                </div>
-                <div class="course_img">
-                    <img src="images/default-image.png" alt="">
-                </div>
-            </div>
+            <h2 class="h2_courses">Cursos</h2>
+            <div class="courses_container">
+
+                <% for(let i=0;i<courses.length; i++){%>
+                    <div class="course">
+                        <div class="course_title">
+                            <p> <%= courses[i].title %> </p>
+                        </div>
+                        <div class="course_img">
+                            <img src="images/<%=courses[i].img%>" alt="course_img">
+                        </div>
+                    </div>
+
+                <%} %>
             
-           
-           
+            </div>
         </div>
     </main>
 

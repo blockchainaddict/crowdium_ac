@@ -1,0 +1,32 @@
+[
+    {
+     "id": 0,
+     "title": "Conceptos básicos de finanzas",
+     "img": "1B.jpg"
+    },
+    {
+     "id": 1,
+     "title": "Blockchain",
+     "img": "2B.jpg"
+    },
+    {
+     "id": 2,
+     "title": "Cómo empezar a invertir",
+     "img": "3B.jpg"
+    },
+    {
+     "id": 0,
+     "title": "Ahorros",
+     "img": "4B.jpg"
+    },
+    {
+     "id": 1,
+     "title": "Criptomonedas: 101",
+     "img": "5B.jpg"
+    },
+    {
+     "id": 2,
+     "title": "Real-estate",
+     "img": "6B.jpg"
+    }
+]

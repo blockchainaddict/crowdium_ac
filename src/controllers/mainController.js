@@ -4,6 +4,10 @@ const path = require('path');
 const projectsLocation = path.join(__dirname, '../data/projectsDatabase.json');
 const projects = JSON.parse(fs.readFileSync(projectsLocation, 'utf-8'));
 
+const coursesLocation = path.join(__dirname, '../data/courses.json');
+const courses = JSON.parse(fs.readFileSync(coursesLocation, 'utf-8'));
+
+
 const mainController = {
 	index: (req,res) =>{
 		res.render("index.ejs", {userLogged:req.session.userToLog});
@@ -71,7 +75,7 @@ const mainController = {
 		res.send('START HERE');
 	},
 	courses: (req,res) =>{
-		res.render('courses.ejs');
+		res.render('courses.ejs', {courses});
 	}
 };
 
