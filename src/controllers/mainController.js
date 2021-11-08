@@ -76,6 +76,9 @@ const mainController = {
 	},
 	courses: (req,res) =>{
 		res.render('courses.ejs', {courses});
+	},
+	userCourses: (req,res) =>{
+		res.render('user_courses.ejs', {courses});
 	}
 };
 

@@ -13,9 +13,8 @@
             <ul class="user_links">
                 <li class="user_link"> <a href="/courses">Cursos</a> </li>
                 <li class="user_link"> <a href="/#">Sobre nosotros</a> </li>
-                <li class="user_link"> <a href="/#">Soporte</a> </li>
                 <% if(locals.userLogged){%>
-
+                    <li class="user_link">  <a href="/user/<%=userLogged.id%>/courses">Mis cursos</a> </li>
                     <li class="user_link">  <a href="#"> <i class="far fa-user"></i>  <%= userLogged.email %> </a> </li>
                     <li class="user_link log"> <a href="/logout">Cerrar sesión</a> </li>
                 <%} else{%>

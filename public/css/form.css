@@ -47,7 +47,8 @@ fieldset legend{
     border: var(--box_border);
     border-radius: 10px;
     padding: var(--box_padding);
-    background-color: rgba(230, 230, 230, 0.3);
+    /* background-color: rgba(230, 230, 230, 0.3); */
+    background-color: rgba(255, 255, 255, 0.8);
     text-align: center;
     font-family: poppins;
     z-index: 3;

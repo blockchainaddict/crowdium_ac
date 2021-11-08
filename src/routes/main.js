@@ -78,4 +78,6 @@ router.get('/try/:id', projectsController.project);
 router.get('/start-here', mainController.startHere);
 router.get('/courses', mainController.courses);
 
+router.get('/user/:id/courses', mainController.userCourses);
+
 module.exports = router;

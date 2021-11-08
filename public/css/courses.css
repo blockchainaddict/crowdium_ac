@@ -1,4 +1,4 @@
-.courses_wrapper{
+.courses_wrapper, .my_courses_wrapper{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,11 +13,13 @@
 
 }
 
-.courses_container{
+.courses_container, .my_courses_container{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     width: 85%;
+    background-color: rgba(230, 230, 230, 0.3);
+    padding-bottom: 30px;
 }
 
 .h2_courses{
@@ -33,6 +35,7 @@
 .course_img:hover{
     transition: all ease-in-out 300ms;
     transform: scale(1.1);
+    cursor: pointer;
 }
 
 .course_title{
@@ -51,6 +54,8 @@
 .course_img{
     padding-top: 20px;
 }
+
+
 
 @media (max-width:1050px) {
     .course img{
