@@ -36,7 +36,8 @@ const validateLogin = [
 ];
 
 const validateNewUser = [
-    check('username').notEmpty().withMessage("Can't be empty"),
+    check('first_name').notEmpty().withMessage("Can't be empty"),
+    check('email').notEmpty().withMessage("Can't be empty"),
     check('password')
         .notEmpty().withMessage("Choose a password").bail()
         .isLength({min:5}).withMessage("Password must have at least 5 characters ")
@@ -59,8 +60,8 @@ router.get('/login', usersController.login);
 router.post('/login', validateLogin, usersController.processLogin);
 router.get('/logout', usersController.logout);
 
-router.get('/new-user',validateNewUser, usersController.create);
-router.post('/new-user', usersController.createUser);
+router.get('/new-user', usersController.create);
+router.post('/new-user', validateNewUser, usersController.createUser);
 
 router.get('/create', mainController.create);
 // router.post('/create', mainController.processCreate);
@@ -81,7 +82,7 @@ router.get('/perfil', authMiddleware, usersController.profile);
 router.get('/gallery', coursesController.gallery);
 router.get('/start-here', authMiddleware, coursesController.startHere);
 
-router.get('/courses', authMiddleware, coursesController.courses);
+router.get('/courses', coursesController.courses);
 router.get('/course/:id', coursesController.course);
 
 router.get('/miscursos', authMiddleware, coursesController.userCourses);

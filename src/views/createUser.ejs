@@ -20,10 +20,21 @@
 								<label for="last_name">Apellido:</label>
 								<input type="last_name" name="last_name" id="last_name">
 							</div>
+
+							<%if(locals.errors && errors.email){%>
+								<p class="errors"><%= errors.email.msg %></p>
+							<% } %> 
+
 							<div class="label_input_pair">
+								
 								<label for="email">Email:</label>
 								<input type="email" name="email" id="email">
 							</div>
+
+							<%if(locals.errors && errors.password){%>
+								<p class="errors"><%= errors.password.msg %></p>
+							<% } %> 
+
 							<div class="label_input_pair">
 								<label for="password">Password:</label>
 								<input type="password" name="password" id="password">

@@ -80,10 +80,18 @@ const usersController = {
                 password: bcrypt.hashSync(password, 10),
                 phone_number
             }
+
+            for(let i=0; i<users.length; i++){
+                console.log(users[i].email);
+                if(users[i].email == newUser.email){
+                    console.log('EMAIL TAKEN');
+                    return res.render('createUser', {errors: {email: {msg: 'Email taken'}}})
+                }
+            }
     
-            // if(User.findByField('email', newUser.email)!=undefined){
+            // if(users.findByField('email', newUser.email)!=undefined){
             //     return res.render('createUser', {errors: {email: {msg: 'Email taken'}}
-            // });
+            //     });
             // }
     
             users.push(newUser);

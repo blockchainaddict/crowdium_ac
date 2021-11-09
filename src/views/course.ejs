@@ -4,11 +4,25 @@
  <%- include("partials/header") %>
 
     <main>
+        <div class="individual_course_wrapper">
         <% for(let i=0; i<courses.length; i++){
-                if(courses[i].id == id){%>
-                       <p><%=courses[i].title%></p> 
+                if(courses[i].id == id){%> 
                        <p>Detalles del curso</p>
-        <%} }%>
+                       <div class="individual_course">
+                        <div class="course_title">
+                            <p> <%= courses[i].title %> </p>
+                        </div>
+                        <div class="individual_course_img">
+                            <img src="/images/<%=courses[i].img%>" alt="course_img">
+                        </div>
+                    </div>
+        <%} }%> 
+
+    </div>
+
+
+
     </main>
+
 
 <%- include('partials/footer')%>

@@ -160,6 +160,10 @@ fieldset legend{
 
 }
 
+.errors{
+    color: red;
+}
+
 @media (max-width:650px){
     .main_container{
         width: 100%;
