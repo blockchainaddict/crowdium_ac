@@ -36,7 +36,7 @@ app.set('view engine', 'ejs'); // Define que el motor que utilizamos es EJS
 app.set('views', path.join(__dirname, '/views')); // Define la ubicación de la carpeta de las Vistas
 
 // ************ Route System require and use() ************
-const mainRouter = require('./routes/main'); // Rutas main
+const mainRouter = require('./routes/mainRoutes'); // Rutas main
 
 app.use('/', mainRouter);
 

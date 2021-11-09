@@ -9,14 +9,16 @@
             <div class="my_courses_container">
 
                 <% for(let i=0;i<courses.length; i++){%>
-                    <div class="course">
-                        <div class="course_title">
-                            <p> <%= courses[i].title %> </p>
-                        </div>
-                        <div class="course_img">
-                            <img src="/images/<%=courses[i].img%>" alt="course_img">
-                        </div>
-                    </div>
+                        <%if(courses[i].users_list.includes(userLogged.id)){%> 
+                            <div class="course">
+                                <div class="course_title">
+                                    <p> <%= courses[i].title %> </p>
+                                </div>
+                                <div class="course_img">
+                                    <img src="/images/<%=courses[i].img%>" alt="course_img">
+                                </div>
+                            </div>
+                        <%}%>
                 <%} %>
             
             </div>

@@ -1,0 +1,24 @@
+.profile_wrapper{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.profile_container{
+    width: 100%;
+    border: 1px solid var(--gray);
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.courses_list{
+    display: flex;
+    flex-direction: column;
+}
+
+.user_course_a:hover{
+    color: var(--blue);
+}

@@ -2,31 +2,37 @@
     {
      "id": 0,
      "title": "Conceptos básicos de finanzas",
+     "users_list": "[0, 1, 4]",
      "img": "1B.jpg"
     },
     {
      "id": 1,
      "title": "Blockchain",
+     "users_list": "[0, 3, 4]",
      "img": "2B.jpg"
     },
     {
      "id": 2,
      "title": "Cómo empezar a invertir",
+     "users_list": "[0, 2, 3, 4]",
      "img": "3B.jpg"
     },
     {
-     "id": 0,
+     "id": 3,
      "title": "Ahorros",
+     "users_list": "[1, 3]",
      "img": "4B.jpg"
     },
     {
-     "id": 1,
+     "id": 4,
      "title": "Criptomonedas: 101",
+     "users_list": "[0, 2, 6]",
      "img": "5B.jpg"
     },
     {
-     "id": 2,
+     "id": 5,
      "title": "Real-estate",
+     "users_list": "[0, 1, 2, 3, 4]",
      "img": "6B.jpg"
     }
 ]

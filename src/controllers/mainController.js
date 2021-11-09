@@ -12,9 +12,7 @@ const mainController = {
 	index: (req,res) =>{
 		res.render("index.ejs", {userLogged:req.session.userToLog});
 	},
-	gallery: (req,res) =>{
-		res.render('gallery.ejs', {userLogged:req.session.userToLog});
-	},
+	
 	dashboard: (req,res) =>{
 		res.render('dashboard.ejs', {userLogged:req.session.userToLog});
 	},
@@ -70,16 +68,8 @@ const mainController = {
 			return project.id == id;
 		})
 		res.render("project.ejs", {projects, project: project});
-	},
-	startHere: (req,res) =>{
-		res.render('start_here.ejs', {courses, userLogged:req.session.userToLog});
-	},
-	courses: (req,res) =>{
-		res.render('courses.ejs', {courses, userLogged:req.session.userToLog});
-	},
-	userCourses: (req,res) =>{
-		res.render('user_courses.ejs', {courses, userLogged:req.session.userToLog});
 	}
+	
 };
 
 module.exports = mainController;

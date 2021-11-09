@@ -7,6 +7,7 @@ const path = require('path');
 const mainController = require('../controllers/mainController');
 const projectsController = require('../controllers/projectsController');
 const usersController = require('../controllers/usersController');
+const coursesController = require('../controllers/coursesController');
 
 // Multer
 const multer = require('multer');
@@ -27,6 +28,7 @@ const uploadFile = multer({storage: storage});
 const { body, check } = require('express-validator');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
+const { userCourses } = require('../controllers/coursesController');
 
 const validateLogin = [
     check('email').notEmpty().withMessage("Can't be empty"),
@@ -52,7 +54,6 @@ const validateNewproject = [
 // INDEX
 router.get('/', mainController.index);
 
-
 // USERS
 router.get('/login', usersController.login);
 router.post('/login', validateLogin, usersController.processLogin);
@@ -60,9 +61,6 @@ router.get('/logout', usersController.logout);
 
 router.get('/new-user',validateNewUser, usersController.create);
 router.post('/new-user', usersController.createUser);
-
-
-router.get('/gallery', mainController.gallery);
 
 router.get('/create', mainController.create);
 // router.post('/create', mainController.processCreate);
@@ -72,12 +70,20 @@ router.get('/projects/', mainController.projects);
 router.get('/project/:id', mainController.project);
 router.get('/dashboard', mainController.dashboard);
 
-router.get('/try', projectsController.projects);
-router.get('/try/:id', projectsController.project);
+router.get('/perfil', authMiddleware, usersController.profile);
 
-router.get('/start-here', mainController.startHere);
-router.get('/courses', mainController.courses);
 
-router.get('/user/:id/courses', mainController.userCourses);
+// Database testing
+// router.get('/try', projectsController.projects);
+// router.get('/try/:id', projectsController.project);
+
+// COURSES
+router.get('/gallery', coursesController.gallery);
+router.get('/start-here', authMiddleware, coursesController.startHere);
+
+router.get('/courses', authMiddleware, coursesController.courses);
+router.get('/course/:id', coursesController.course);
+
+router.get('/miscursos', authMiddleware, coursesController.userCourses);
 
 module.exports = router;

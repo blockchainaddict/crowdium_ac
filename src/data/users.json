@@ -23,5 +23,13 @@
   "id": 4,
   "email": "lucho@gmail.com",
   "password": "$2a$10$zCVFhJ8XqheYydhpomrY5u1GeNCdNYRMvf7a9CrPVjCu.JPdFf.g."
+ },
+ {
+  "id": 6,
+  "first_name": "Juan",
+  "last_name": "Carlos",
+  "email": "j@gmail.com",
+  "password": "$2a$10$7raV.QEo4dnl2VklAxGLLugUP3smftVV9qDcLlPFuokXF9IrS88Ku",
+  "phone_number": "47920296"
  }
 ]

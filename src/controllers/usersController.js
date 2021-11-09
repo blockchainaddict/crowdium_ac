@@ -8,6 +8,10 @@ const { validationResult } = require('express-validator');
 const usersLocation = path.join(__dirname, '../data/users.json');
 const users = JSON.parse(fs.readFileSync(usersLocation, 'utf-8'));
 
+// Courses
+const coursesLocation = path.join(__dirname, '../data/courses.json');
+const courses = JSON.parse(fs.readFileSync(coursesLocation, 'utf-8'));
+
 const bcrypt = require('bcryptjs');
 const { off } = require('process');
 
@@ -66,10 +70,15 @@ const usersController = {
         let errors = validationResult(req);
 
         if(errors.isEmpty()){
+            const {first_name, last_name, email, password, phone_number} = req.body;
+
             newUser = {
                 id: users[users.length - 1].id + 1,
-                email: req.body.email,
-                password: bcrypt.hashSync(req.body.password, 10)
+                first_name,
+                last_name,
+                email,
+                password: bcrypt.hashSync(password, 10),
+                phone_number
             }
     
             // if(User.findByField('email', newUser.email)!=undefined){
@@ -86,6 +95,12 @@ const usersController = {
         else{
             res.render('createUser', {errors: errors.mapped()});
         }
+    },
+    profile: (req,res)=>{
+        res.render('user_profile.ejs', {
+            userLogged: req.session.userToLog,
+            courses
+        });
     }
 
 }

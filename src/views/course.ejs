@@ -1,0 +1,14 @@
+<%- include('partials/head')%>
+
+ <!-- Header -->
+ <%- include("partials/header") %>
+
+    <main>
+        <% for(let i=0; i<courses.length; i++){
+                if(courses[i].id == id){%>
+                       <p><%=courses[i].title%></p> 
+                       <p>Detalles del curso</p>
+        <%} }%>
+    </main>
+
+<%- include('partials/footer')%>

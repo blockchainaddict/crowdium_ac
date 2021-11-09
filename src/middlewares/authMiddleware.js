@@ -3,7 +3,7 @@ function authMiddleware(req,res,next){
         next();
     }
     else{
-        res.send('Crea un usuario o logueate');
+        res.redirect('/login');
     }
 }
 

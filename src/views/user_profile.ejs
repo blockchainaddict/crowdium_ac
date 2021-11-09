@@ -1,0 +1,33 @@
+<%- include('partials/head')%>
+
+ <!-- Header -->
+ <%- include("partials/header") %>
+
+    <main>
+
+        <div class="profile_wrapper">
+           <div class="profile_container">
+              <h3>Perfil</h3>
+
+              <div class="user_data">
+                 <p> <%=userLogged.email%> </p>
+                 <p> <%=userLogged.first_name%> </p>
+                 <p> <%=userLogged.last_name%> </p>
+              </div>
+
+              <div class="user_courses">
+                 <h3>Cursos:</h3>
+                 <div class="courses_list">
+                    <% for(let i=0; i<courses.length; i++){
+                           if(courses[i].users_list.includes(userLogged.id)){%>
+                                <a class="user_course_a" href="/course/<%=courses[i].id%>"><%= courses[i].title%></a>
+                           <%}
+                    } %>
+                 </div>
+              </div>
+           </div>
+        </div>
+
+    </main>
+
+ <%- include('partials/footer')%>
