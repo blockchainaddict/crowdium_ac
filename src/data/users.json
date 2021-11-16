@@ -2,7 +2,10 @@
  {
   "id": 0,
   "email": "sudo@housify.com",
-  "password": "$2a$10$HLFJf4WOYvJO/YA229YIiuiKdgaLJaPF7uiY9PBWIte68YFQZ/.Xa"
+  "password": "$2a$10$HLFJf4WOYvJO/YA229YIiuiKdgaLJaPF7uiY9PBWIte68YFQZ/.Xa",
+  "first_name": "sudo",
+  "last_name": "admin1",
+  "phone_number": "1149745607"
  },
  {
   "id": 1,

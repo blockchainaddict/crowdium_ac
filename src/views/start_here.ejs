@@ -8,13 +8,13 @@
             <h2 class="h2_courses">Empieza tu aventura financiera</h2>
             <div class="my_courses_container">
 
-                <% for(let i=0;i<courses.length; i++){%>
+                <% for(let i=0;i<video.length; i++){%>
                     <div class="course">
                         <div class="course_title">
-                            <p> <%= courses[i].title %> </p>
+                            <p> <%= video[i].title %> </p>
                         </div>
                         <div class="course_img">
-                            <img src="/images/<%=courses[i].img%>" alt="course_img">
+                            <img src="/images/<%=video[i].img%>" alt="course_img">
                         </div>
                     </div>
                 <%} %>

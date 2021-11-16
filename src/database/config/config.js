@@ -2,7 +2,7 @@ module.exports = {
   "development": {
     "username": "root",
     "password": "34551355",
-    "database": "housify1",
+    "database": "crowdium_academy_videos",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },

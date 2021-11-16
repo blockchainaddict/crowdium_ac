@@ -2,22 +2,29 @@
 const fs = require('fs');
 const path = require('path');
 
-// Creating handles for files
-const projectsLocation = path.join(__dirname, '../data/projectsDatabase.json');
-const projects = JSON.parse(fs.readFileSync(projectsLocation, 'utf-8'));
+// Bring DB
+const db = require('../database/models');
+const sequelize = db.sequelize;
+const { Op } = require("sequelize");
 
-const coursesLocation = path.join(__dirname, '../data/courses.json');
-const courses = JSON.parse(fs.readFileSync(coursesLocation, 'utf-8'));
+// Call each model
+const Videos = db.Video;
+const Course = db.Course;
+const Categories = db.Category;
 
-//
+// Methods
 const coursesController = {
     gallery: (req,res) =>{
-		res.render('gallery.ejs', {userLogged:req.session.userToLog});
+		res.render('gallery.ejs', {userLogged:req.session.userToLog}); //Esto tiene que venir de la DB
 	},
     startHere: (req,res) =>{
-		res.render('start_here.ejs', {courses, userLogged:req.session.userToLog});
+        Videos.findAll({})
+            .then(video =>{
+                res.render('start_here.ejs', {video, userLogged:req.session.userToLog});
+            });
 	},
 	courses: (req,res) =>{
+        
 		res.render('courses.ejs', {courses, userLogged:req.session.userToLog});
 	},
 	course: (req,res) =>{

@@ -1,8 +1,9 @@
 .profile_wrapper{
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     margin-top: 30px;
     width: 100%;
+    flex-wrap: wrap;
 }
 
 .profile_container{
@@ -12,6 +13,18 @@
     padding: 20px;
     display: flex;
     flex-direction: column;
+    width: 300px;
+    margin: 10px 20px;
+}
+
+.user_data{
+    display: flex;
+    flex-direction: column;
+}
+
+.user_data p{
+    margin: 0;
+    
 }
 
 .courses_list{
@@ -21,4 +34,19 @@
 
 .user_course_a:hover{
     color: var(--blue);
+}
+
+.label_input_pair_user{
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+}
+
+.hide_button{
+    display: none;
+}
+
+
+.inactive{
+    display: none;
 }

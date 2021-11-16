@@ -27,9 +27,9 @@
 }
 
 .course{
-    width: 250px;
+    width: fit-content;
     text-align: center;
-    margin: 0 25px;
+    margin: 0 10px;
 }
 
 
@@ -51,7 +51,19 @@
 }
 
 .course_img{
-    padding-top: 20px;
+    padding: 20px;
+    width: fit-content;
+    border-radius: 20px;
+}
+
+.category_description{
+    width: 22vw;
+    text-align: center;
+    margin: auto auto;
+}
+.category_description p {
+    margin: 0;
+    font-size: 0.8em;
 }
 
 

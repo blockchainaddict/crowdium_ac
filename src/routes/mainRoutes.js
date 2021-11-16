@@ -8,6 +8,7 @@ const mainController = require('../controllers/mainController');
 const projectsController = require('../controllers/projectsController');
 const usersController = require('../controllers/usersController');
 const coursesController = require('../controllers/coursesController');
+const coursesControllerDB = require('../controllers/coursesControllerDB');
 
 // Multer
 const multer = require('multer');
@@ -67,11 +68,15 @@ router.get('/create', mainController.create);
 // router.post('/create', mainController.processCreate);
 router.post('/create', uploadFile.single("project_picture"), projectsController.create);
 
+
+
+
 router.get('/projects/', mainController.projects);
 router.get('/project/:id', mainController.project);
 router.get('/dashboard', mainController.dashboard);
 
 router.get('/perfil', authMiddleware, usersController.profile);
+router.put('/perfil/:id', usersController.update);
 
 
 // Database testing
@@ -80,7 +85,9 @@ router.get('/perfil', authMiddleware, usersController.profile);
 
 // COURSES
 router.get('/gallery', coursesController.gallery);
-router.get('/start-here', authMiddleware, coursesController.startHere);
+
+// router.get('/start-here', authMiddleware, coursesController.startHere);
+router.get('/start-here', authMiddleware, coursesControllerDB.startHere);
 
 router.get('/courses', coursesController.courses);
 router.get('/course/:id', coursesController.course);
