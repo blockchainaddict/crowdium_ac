@@ -66,7 +66,7 @@ router.post('/new-user', validateNewUser, usersController.createUser);
 
 router.get('/create', mainController.create);
 // router.post('/create', mainController.processCreate);
-router.post('/create', uploadFile.single("project_picture"), projectsController.create);
+// router.post('/create', uploadFile.single("project_picture"), projectsController.create);
 
 
 

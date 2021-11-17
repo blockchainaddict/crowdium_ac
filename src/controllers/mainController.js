@@ -1,9 +1,6 @@
 const fs = require('fs');
 const path = require('path');
 
-const projectsLocation = path.join(__dirname, '../data/projectsDatabase.json');
-const projects = JSON.parse(fs.readFileSync(projectsLocation, 'utf-8'));
-
 const coursesLocation = path.join(__dirname, '../data/courses.json');
 const courses = JSON.parse(fs.readFileSync(coursesLocation, 'utf-8'));
 

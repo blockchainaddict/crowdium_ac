@@ -10,11 +10,14 @@
 
                 <% for(let i=0;i<video.length; i++){%>
                     <div class="course">
+                        
+                        <div class="course_img">
+                            <!-- The Image is not from the YT video... No need -->
+                            <a target="blank" href="<%=video[i].url%>"><img src="/images/<%=video[i].id%>B.jpg" alt=""> </a> 
+                                   
+                        </div>
                         <div class="course_title">
                             <p> <%= video[i].title %> </p>
-                        </div>
-                        <div class="course_img">
-                            <img src="/images/<%=video[i].img%>" alt="course_img">
                         </div>
                     </div>
                 <%} %>

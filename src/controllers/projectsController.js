@@ -1,9 +1,8 @@
+/*
 const fs = require('fs');
 const path = require('path');
 let db = require("../database/models");
 
-const projectsLocation = path.join(__dirname, '../data/projectsDatabase.json');
-const projects = JSON.parse(fs.readFileSync(projectsLocation, 'utf-8'));
 
 const projectsController = {
     projects: (req,res)=>{
@@ -87,3 +86,4 @@ const projectsController = {
 }
 
 module.exports = projectsController;
+*/

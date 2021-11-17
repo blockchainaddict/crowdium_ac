@@ -42,7 +42,7 @@ const usersController = {
                 req.session.userToLog = userToLog;
 
                 if(req.body.remember != undefined){
-                    res.cookie('remember account', userToLog.email, {maxAge: 600000});
+                    res.cookie('rememberAccount', userToLog.email, {maxAge: 600000});
                 }
                 else{
                     console.log('do not remember account');
@@ -60,7 +60,11 @@ const usersController = {
         }
     },
     logout: (req,res) =>{
-        delete req.session.userToLog;
+        delete req.session.userToLog; //delete the user from the session
+        if(req.cookies.rememberAccount){
+            res.clearCookie('rememberAccount');
+            // delete req.cookies.rememberAccount;
+        }
         res.redirect('/');
     },
     create: (req,res)=>{
