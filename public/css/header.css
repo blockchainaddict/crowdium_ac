@@ -62,9 +62,7 @@ li{
     color: white;
 }
 
-
-
-.user_link a:hover{
+.user_link:hover{
     color: rgb(142, 165, 233);
 }
 

@@ -140,8 +140,23 @@ const usersController = {
 
         fs.writeFileSync(usersLocation, JSON.stringify(newListOfUsers, null, " "));
         res.redirect("/perfil");
-    }
+    },
 
+    subscribeToCourse: (req,res)=> {
+        let newCourse = courses[req.body.course_id];
+        console.log(req.session.userToLog);
+        // Agarro la lista de usuarios que tiene el curso y le agrego este nuevo
+        let usersList = newCourse.users_list;
+        console.log(typeof(usersList));
+
+        usersList.push(req.session.userToLog);
+        console.log(usersList);
+
+
+
+        // re-write the file with the new userlist for the course
+        res.send('subscribed to course: ' + req.body.course_id);
+    }
 }
 
 module.exports = usersController;

@@ -10,17 +10,33 @@
                        <p>Detalles del curso</p>
                        <div class="individual_course">
                         <div class="course_title">
-                            <p> <%= courses[i].title %> </p>
+                            <h2> <%= courses[i].title %> </h2>
+                        </div>
+                        <br>
+                        <div class="course_description">
+                            <p>En este curso aprenderás todo lo que tiene que ver con finanzas tradicionales. Desde qué significa invertir, cómo maximizar tus ahorros, etc...</p>
                         </div>
                         <div class="individual_course_img">
                             <img src="/images/<%=courses[i].img%>" alt="course_img">
+                        </div>
+                        <div class="subscribe_to_course">
+
+                            <form class="form_plain" action="/subscribe-to-course" method="POST">
+                                <input class="hidden_input" type="text" name="course_id" id="course_id" value="<%=courses[i].id%>">
+                                <button type="submit" class="subscribe_to_course_btn">Subscribirme a este curso</button>
+                            </form>
+                            
+                            
                         </div>
                     </div>
         <%} }%> 
 
     </div>
 
-
+    <div class="course_videos">
+        <p>Lista/galeria de videos del curso</p>
+        
+    </div>
 
     </main>
 

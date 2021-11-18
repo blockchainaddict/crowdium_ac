@@ -94,4 +94,6 @@ router.get('/course/:id', coursesController.course);
 
 router.get('/miscursos', authMiddleware, coursesController.userCourses);
 
+router.post('/subscribe-to-course', usersController.subscribeToCourse);
+
 module.exports = router;
