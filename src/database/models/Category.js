@@ -22,9 +22,9 @@ module.exports = (sequelize, dataTypes) => {
 
     // Relational aspects
     Category.associate = function(models){
-        Category.belongsTo(models.Category, {
-            as: "category",
-            foregignKey: "id_category"
+        Category.hasMany(models.Course, {
+            as: "courses",
+            foreignKey: "id_category"
         })
     }
 

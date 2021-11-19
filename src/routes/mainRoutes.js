@@ -89,8 +89,8 @@ router.get('/gallery', coursesController.gallery);
 // router.get('/start-here', authMiddleware, coursesController.startHere);
 router.get('/start-here', authMiddleware, coursesControllerDB.startHere);
 
-router.get('/courses', coursesController.courses);
-router.get('/course/:id', coursesController.course);
+// router.get('/courses', coursesController.courses);
+// router.get('/course/:id', coursesController.course);
 
 router.get('/miscursos', authMiddleware, coursesController.userCourses);
 

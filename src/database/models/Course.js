@@ -11,12 +11,16 @@ module.exports = (sequelize, dataTypes) => {
         name: {
             type: dataTypes.STRING(50),
         },
+        description: {
+            type: dataTypes.TEXT,
+        },
         id_category: {
             type: dataTypes.INTEGER,
             allowNull: false
         }
         
     };
+
     let config = {
         tableName: "courses",
         timestamps: false
@@ -28,8 +32,16 @@ module.exports = (sequelize, dataTypes) => {
     Course.associate = function(models){
         Course.belongsTo(models.Category, {
             as: "category",
-            foregignKey: "id_category"
-        })
+            foreignKey: "id_category"
+        });
+
+        // Course.belongsToMany(models.User, {
+        //     as: "users",
+        //     through: "user_course",
+        //     foreignKey: "course_id",
+        //     otherKey: "user_id",
+        //     timestamps: false
+        // });
     }
 
 

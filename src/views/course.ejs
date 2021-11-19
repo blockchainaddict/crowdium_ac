@@ -5,36 +5,41 @@
 
     <main>
         <div class="individual_course_wrapper">
-        <% for(let i=0; i<courses.length; i++){
-                if(courses[i].id == id){%> 
                        <p>Detalles del curso</p>
                        <div class="individual_course">
                         <div class="course_title">
-                            <h2> <%= courses[i].title %> </h2>
+                            <h2> <%= course.name %> </h2>
                         </div>
                         <br>
                         <div class="course_description">
-                            <p>En este curso aprenderás todo lo que tiene que ver con finanzas tradicionales. Desde qué significa invertir, cómo maximizar tus ahorros, etc...</p>
+                            <p><%=course.description%></p>
                         </div>
                         <div class="individual_course_img">
-                            <img src="/images/<%=courses[i].img%>" alt="course_img">
+                            <img src="/images/<%=course.id%>B.jpg" alt="course_img">
                         </div>
                         <div class="subscribe_to_course">
 
                             <form class="form_plain" action="/subscribe-to-course" method="POST">
-                                <input class="hidden_input" type="text" name="course_id" id="course_id" value="<%=courses[i].id%>">
+                                <input class="hidden_input" type="text" name="course_id" id="course_id" value="<%=course.id%>">
                                 <button type="submit" class="subscribe_to_course_btn">Subscribirme a este curso</button>
                             </form>
                             
                             
                         </div>
                     </div>
-        <%} }%> 
 
     </div>
 
     <div class="course_videos">
         <p>Lista/galeria de videos del curso</p>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+
         
     </div>
 

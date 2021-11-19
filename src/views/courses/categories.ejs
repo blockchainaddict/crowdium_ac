@@ -1,0 +1,28 @@
+<%- include('../partials/head')%>
+
+ <!-- Header -->
+ <%- include("../partials/header") %>
+    
+    <main>
+        <div class="courses_wrapper">            
+
+            <h2 class="h2_courses">Categorías</h2>
+            <div class="courses_container">
+
+                <% for(let i=0;i<categories.length; i++){%>
+                    <div class="course">
+                        <div class="course_title">
+                            <p> <%= categories[i].name %> </p>
+                        </div>
+                        <div class="course_img">
+                           <a href="/courses/category/<%=categories[i].id%>"><img src="/images/<%=categories[i].id%>B.jpg" alt="course_img"></a> 
+                        </div>
+                    </div>
+
+                <%} %>
+            
+            </div>
+        </div>
+    </main>
+
+<%- include('../partials/footer')%>

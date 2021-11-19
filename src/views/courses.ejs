@@ -15,7 +15,7 @@
                         <p>Finanzas</p>
                     </div>
                     <div class="course_img">
-                        <img src="images/-1.jpg" alt="course_img">
+                        <img src="/images/-1.jpg" alt="course_img">
                     </div>
                     <div class="category_description">
                         <p>Todo sobre finanzas tradicionales y bla bla...</p>
@@ -26,7 +26,7 @@
                         <p>Criptomonedas</p>
                     </div>
                     <div class="course_img">
-                        <img src="images/-2.jpg" alt="course_img">
+                        <img src="/images/-2.jpg" alt="course_img">
                     </div>
                     <div class="category_description">
                         <p>Aprendé qué es la tecnología Blockchain y cómo generar ingresos con crypto monedas.</p>
@@ -37,7 +37,7 @@
                         <p>Real estate</p>
                     </div>
                     <div class="course_img">
-                        <img src="images/-3.jpg" alt="course_img">
+                        <img src="/images/-3.jpg" alt="course_img">
                     </div>
                     <div class="category_description">
                         <p>Aprendé a invertir en Real Estate con esta serie de videos. Pozos de inversión, etc...</p>
@@ -51,11 +51,14 @@
                 <% for(let i=0;i<courses.length; i++){%>
                     <div class="course">
                         <div class="course_title">
-                            <p> <%= courses[i].title %> </p>
+                            <p> <%= courses[i].name %> WTF</p>
                         </div>
                         <div class="course_img">
-                           <a href="/course/<%=courses[i].id%>"><img src="images/<%=courses[i].img%>" alt="course_img"></a> 
+                           <a href="/course/<%=courses[i].id%>">
+                                <img src="/images/<%=courses[i].id%>B.jpg" alt="course_img">
+                            </a> 
                         </div>
+                        <p> Categoría: <%= courses[i].category.name%></p>   
                     </div>
 
                 <%} %>

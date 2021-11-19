@@ -6,18 +6,19 @@
     <main>
         <div class="my_courses_wrapper">
             <h2 class="h2_courses">Empieza tu aventura financiera</h2>
+            <p>Cursos</p>
             <div class="my_courses_container">
 
-                <% for(let i=0;i<video.length; i++){%>
+                <% for(let i=0;i<course.length; i++){%>
                     <div class="course">
                         
                         <div class="course_img">
                             <!-- The Image is not from the YT video... No need -->
-                            <a target="blank" href="<%=video[i].url%>"><img src="/images/<%=video[i].id%>B.jpg" alt=""> </a> 
+                            <a href="/course/<%=course[i].id%>"><img src="/images/<%=course[i].id%>B.jpg" alt=""> </a> 
                                    
                         </div>
                         <div class="course_title">
-                            <p> <%= video[i].title %> </p>
+                            <p> <%= course[i].name %> </p>
                         </div>
                     </div>
                 <%} %>
