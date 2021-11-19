@@ -55,9 +55,9 @@ const validateNewproject = [
 ]
 
 // USERS
-router.get('/login', usersController.login);
-router.post('/login', validateLogin, usersController.processLogin);
-router.get('/logout', usersController.logout);
+router.get('/login', usersControllerDB.loginForm);
+router.post('/login', validateLogin, usersControllerDB.login);
+router.get('/logout', usersControllerDB.logout);
 
 router.get('/new-user', usersControllerDB.createUserForm);
 router.post('/new-user', validateNewUser, usersControllerDB.createUser);
