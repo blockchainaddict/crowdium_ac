@@ -1,9 +1,9 @@
 module.exports = {
   "development": {
-    "username": "root",
-    "password": "34551355",
-    "database": "crowdium_academy_videos",
-    "host": "127.0.0.1",
+    "username": "oq574s0afyequbau",
+    "password": "jl99pxj70q3twblv",
+    "database": "dlgm02gx2j3xt5hg",
+    "host": "w3epjhex7h2ccjxx.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   },
   "test": {
@@ -14,10 +14,10 @@ module.exports = {
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": null,
+    "username": "rooq574s0afyequbauot",
+    "password": "jl99pxj70q3twblv",
     "database": "database_production",
-    "host": "127.0.0.1",
+    "host": "w3epjhex7h2ccjxx.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   }
 }
