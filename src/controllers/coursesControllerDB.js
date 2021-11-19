@@ -20,7 +20,7 @@ const coursesController = {
 			include: ["category"]
 		})
 			.then(courses=>{
-				return res.render('courses.ejs', {courses, userLogged:req.session.userToLog});
+				return res.render('courses/courses.ejs', {courses, userLogged:req.session.userToLog});
 			})
 			.catch((err) => {console.log(err)});
 	},
@@ -37,7 +37,7 @@ const coursesController = {
 		let id = req.params.id;
 		Course.findByPk(id)
 			.then(course=>{
-				res.render('course.ejs', {course, id, userLogged:req.session.userToLog});
+				res.render('courses/course.ejs', {course, id, userLogged:req.session.userToLog});
 			})
 	},
 	userCourses: (req,res) =>{

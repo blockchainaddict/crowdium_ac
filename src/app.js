@@ -38,9 +38,11 @@ app.set('views', path.join(__dirname, '/views')); // Define la ubicación de la 
 // ************ Route System require and use() ************
 const mainRouter = require('./routes/mainRoutes'); // Rutas main
 const coursesRouter = require('./routes/coursesRoutes');
+const usersRouter = require('./routes/usersRoutes');
 
 app.use('/', mainRouter);
 app.use(coursesRouter);
+app.use(usersRouter);
 
 // ************ Set the server to listen ************
 app.listen(port, () => {

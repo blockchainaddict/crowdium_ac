@@ -9,6 +9,7 @@ const projectsController = require('../controllers/projectsController');
 const usersController = require('../controllers/usersController');
 const coursesController = require('../controllers/coursesController');
 const coursesControllerDB = require('../controllers/coursesControllerDB');
+const usersControllerDB = require('../controllers/usersControllerDB');
 
 // Multer
 const multer = require('multer');
@@ -56,44 +57,16 @@ const validateNewproject = [
 // INDEX
 router.get('/', mainController.index);
 
-// USERS
-router.get('/login', usersController.login);
-router.post('/login', validateLogin, usersController.processLogin);
-router.get('/logout', usersController.logout);
-
-router.get('/new-user', usersController.create);
-router.post('/new-user', validateNewUser, usersController.createUser);
-
 router.get('/create', mainController.create);
-// router.post('/create', mainController.processCreate);
-// router.post('/create', uploadFile.single("project_picture"), projectsController.create);
-
-
-
 
 router.get('/projects/', mainController.projects);
 router.get('/project/:id', mainController.project);
 router.get('/dashboard', mainController.dashboard);
-
-router.get('/perfil', authMiddleware, usersController.profile);
-router.put('/perfil/:id', usersController.update);
-
-
-// Database testing
-// router.get('/try', projectsController.projects);
-// router.get('/try/:id', projectsController.project);
 
 // COURSES
 router.get('/gallery', coursesController.gallery);
 
 // router.get('/start-here', authMiddleware, coursesController.startHere);
 router.get('/start-here', authMiddleware, coursesControllerDB.startHere);
-
-// router.get('/courses', coursesController.courses);
-// router.get('/course/:id', coursesController.course);
-
-router.get('/miscursos', authMiddleware, coursesController.userCourses);
-
-router.post('/subscribe-to-course', usersController.subscribeToCourse);
 
 module.exports = router;
