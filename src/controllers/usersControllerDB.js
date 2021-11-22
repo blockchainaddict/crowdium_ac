@@ -131,9 +131,21 @@ const usersController = {
         Promise
         .all([userPromm, coursesPromm])
             .then(([user, courses])=>{
-                return res.render('user_profile.ejs', {userLogged: user.dataValues, courses})
+                return res.render('users/user_profile.ejs', {userLogged: user.dataValues, courses})
             })
             .catch((err)=>{console.log();})
+    },
+    userCourses: (req,res)=>{
+        let userLogged;
+        // If there's a logged user, that will be the user to use
+        if(req.session.userToLog){
+            userLogged = req.session.userToLog;
+        }
+
+        Course.findAll({include: ['users']})
+        .then(courses =>{
+            return res.render('users/user_courses.ejs', {userLogged, courses});
+        })
     }
 }
 

@@ -94,6 +94,11 @@ fieldset legend{
     border-radius: 5px;
     padding: 0.3rem 0.3rem;
 }
+.label_input_pair textarea{
+    border: none;
+    border-radius: 5px;
+    padding: 0.3rem 0.3rem;
+}
 
 .label_input_pairB input{
     margin-left: 0;
@@ -135,6 +140,17 @@ fieldset legend{
 
 .hidden_input{
     display: none;
+}
+
+.upload_file{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    justify-content: space-between;
+    margin-top: 20px;
+    height: 100px;
+    border: 1px solid black;
+    padding: 10px;
 }
 
 @media (max-width:1000px){

@@ -10,18 +10,22 @@
             <h2 class="h2_courses">Categorías</h2>
             <div class="courses_categories">
 
-                <div class="course">
-                    <div class="course_title">
-                        <p>Finanzas</p>
+                
+                <% for(let i=0; i<categories.length; i++){ %> 
+                    <div class="course">
+                        <div class="course_title">
+                            <p> <%= categories[i].name%> </p>
+                        </div>
+                        <div class="course_img">
+                            <a href="/courses/category/1"><img src="/images/-<%=categories[i].id%>.jpg" alt="course_img"></a> 
+                        </div>
+                        <div class="category_description">
+                            <p>Aca va una descripcion amena de la categoria</p>
+                        </div>
                     </div>
-                    <div class="course_img">
-                        <a href="/courses/category/1"><img src="/images/-1.jpg" alt="course_img"></a> 
-                    </div>
-                    <div class="category_description">
-                        <p>Todo sobre finanzas tradicionales y bla bla...</p>
-                    </div>
-                </div>
-                <div class="course">
+                <% } %> 
+                
+                <!-- <div class="course">
                     <div class="course_title">
                         <p>Criptomonedas</p>
                     </div>
@@ -31,8 +35,8 @@
                     <div class="category_description">
                         <p>Aprendé qué es la tecnología Blockchain y cómo generar ingresos con crypto monedas.</p>
                     </div>
-                </div>
-                <div class="course">
+                </div> -->
+                <!-- <div class="course">
                     <div class="course_title">
                         <p>Real estate</p>
                     </div>
@@ -42,7 +46,7 @@
                     <div class="category_description">
                         <p>Aprendé a invertir en Real Estate con esta serie de videos. Pozos de inversión, etc...</p>
                     </div>
-                </div>
+                </div> -->
             </div>
 
             <h2 class="h2_courses">Cursos</h2>
@@ -51,7 +55,7 @@
                 <% for(let i=0;i<courses.length; i++){%>
                     <div class="course">
                         <div class="course_title">
-                            <p> <%= courses[i].name %> WTF</p>
+                            <p> <%= courses[i].name %></p>
                         </div>
                         <div class="course_img">
                            <a href="/course/<%=courses[i].id%>">

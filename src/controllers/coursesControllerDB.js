@@ -7,6 +7,7 @@ const db = require('../database/models');
 const sequelize = db.sequelize;
 const { Op } = require("sequelize");
 const Category = require('../database/models/Category');
+const { send } = require('process');
 
 // Call each model
 const Videos = db.Video;
@@ -16,11 +17,14 @@ const Categories = db.Category;
 // Methods
 const coursesController = {
 	courses: (req,res) =>{
-        Course.findAll({
+        let coursesProm = Course.findAll({
 			include: ["category"]
-		})
-			.then(courses=>{
-				return res.render('courses/courses.ejs', {courses, userLogged:req.session.userToLog});
+		});
+		let categoriesProm = Categories.findAll();
+
+		Promise.all([coursesProm, categoriesProm])
+			.then(([courses, categories])=>{
+				return res.render('courses/courses.ejs', {courses, categories, userLogged:req.session.userToLog});
 			})
 			.catch((err) => {console.log(err)});
 	},
@@ -58,7 +62,34 @@ const coursesController = {
 				return res.render('courses/category.ejs', {category,courses, userLogged:req.session.userToLog});
 			})
 			.catch((err)=>{console.log(err);})
+	},
+
+	createCourseForm: (req,res)=>{
+		Categories.findAll()
+			.then(categories =>{
+				return res.render('courses/createCourse.ejs', {categories})
+			});
+	},
+
+	createCourse: (req,res)=>{
+		const { name, description, id_category } = req.body;
+
+		Course.create({
+			name,
+			description,
+			id_category: parseInt(id_category),
+			course_img: req.file ? req.file.upload_img : 'default_course_img.jpg'
+		})
+		.then(()=>{
+			return res.redirect('/courses');
+		})
+		.catch(err=>{res.send(err);})
 	}
+	// deleteCourse: (req,res)=>{
+	// 	Course.destroy()
+	// }
+
+
 }
 
 module.exports = coursesController;

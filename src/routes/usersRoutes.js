@@ -68,7 +68,7 @@ router.get('/perfil', authMiddleware, usersControllerDB.profile);
 router.put('/perfil/:id', usersControllerDB.update);
 
 
-router.get('/miscursos', authMiddleware, coursesController.userCourses);
+router.get('/miscursos', authMiddleware, usersControllerDB.userCourses);
 
 router.post('/subscribe-to-course', usersController.subscribeToCourse);
 

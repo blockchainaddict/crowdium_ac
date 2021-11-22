@@ -1,7 +1,7 @@
-<%- include('partials/head')%>
+<%- include('../partials/head')%>
  
 <!-- Header -->
-<%- include("partials/header") %>
+<%- include("../partials/header") %>
     
     <main>
         <div class="my_courses_wrapper">
@@ -9,20 +9,21 @@
             <div class="my_courses_container">
 
                 <% for(let i=0;i<courses.length; i++){%>
-                        <%if(courses[i].users_list.includes(userLogged.id)){%> 
+                    <%for(let u=0; u<courses[i].users.length; u++){%>
+                        <%if(courses[i].users[u].id == (userLogged.id)){%>
                             <div class="course">
                                 <div class="course_title">
-                                    <p> <%= courses[i].title %> </p>
+                                    <p> <%= courses[i].name %> </p>
                                 </div>
                                 <div class="course_img">
-                                    <a href="/course/<%=courses[i].id%>"><img src="/images/<%=courses[i].img%>" alt="course_img"></a> 
+                                    <a href="/course/<%=courses[i].id%>"><img src="/images/<%=courses[i].id%>B.jpg" alt="course_img"></a> 
                                 </div>
                             </div>
-                        <%}%>
+                        <%} }%>
                 <%} %>
             
             </div>
         </div>
     </main>
 
-<%- include('partials/footer')%>
+<%- include('../partials/footer')%>
