@@ -108,39 +108,39 @@ const usersController = {
             res.render('createUser', {errors: errors.mapped()});
         }
     },
-    profile: (req,res)=>{
-        res.render('user_profile.ejs', {
-            userLogged: req.session.userToLog,
-            courses
-        });
-    },
-    update: (req,res)=>{
-        let userId = req.params.id;
-        let userToUpdate = users.find(user => user.id == userId);
-        console.log(userToUpdate);
+    // profile: (req,res)=>{
+    //     res.render('user_profile.ejs', {
+    //         userLogged: req.session.userToLog,
+    //         courses
+    //     });
+    // },
+    // update: (req,res)=>{
+    //     let userId = req.params.id;
+    //     let userToUpdate = users.find(user => user.id == userId);
+    //     console.log(userToUpdate);
 
-        const { email, first_name, last_name, phone_number } = req.body;
+    //     const { email, first_name, last_name, phone_number } = req.body;
 
-        userToUpdate.email = email;
-        userToUpdate.first_name = first_name;
-        userToUpdate.last_name = last_name;
-        userToUpdate.phone_number = phone_number;
+    //     userToUpdate.email = email;
+    //     userToUpdate.first_name = first_name;
+    //     userToUpdate.last_name = last_name;
+    //     userToUpdate.phone_number = phone_number;
 
-        console.log(userToUpdate);
+    //     console.log(userToUpdate);
 
-        // userToUpdate = {
-        //     email,
-        //     first_name,
-        //     last_name,
-        //     phone_number
-        // }
+    //     // userToUpdate = {
+    //     //     email,
+    //     //     first_name,
+    //     //     last_name,
+    //     //     phone_number
+    //     // }
 
-        let newListOfUsers = users;
-        newListOfUsers[userId-1] = userToUpdate;
+    //     let newListOfUsers = users;
+    //     newListOfUsers[userId-1] = userToUpdate;
 
-        fs.writeFileSync(usersLocation, JSON.stringify(newListOfUsers, null, " "));
-        res.redirect("/perfil");
-    },
+    //     fs.writeFileSync(usersLocation, JSON.stringify(newListOfUsers, null, " "));
+    //     res.redirect("/perfil");
+    // },
 
     subscribeToCourse: (req,res)=> {
         let newCourse = courses[req.body.course_id];

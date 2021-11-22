@@ -64,8 +64,8 @@ router.post('/new-user', validateNewUser, usersControllerDB.createUser);
 
 
 // PROFILE views
-router.get('/perfil', authMiddleware, usersController.profile);
-router.put('/perfil/:id', usersController.update);
+router.get('/perfil', authMiddleware, usersControllerDB.profile);
+router.put('/perfil/:id', usersControllerDB.update);
 
 
 router.get('/miscursos', authMiddleware, coursesController.userCourses);

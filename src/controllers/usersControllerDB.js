@@ -67,7 +67,7 @@ const usersController = {
                                 }
                     
                                 if(userToLog == undefined){
-                                    res.render('login.ejs', {errors: errors});
+                                    res.render('users/login.ejs', {errors: errors});
                                     console.log(errors.mapped());
                                 }
                                 else{
@@ -86,7 +86,7 @@ const usersController = {
                             else{
                                 console.log(errors.mapped());
                                 console.log("WHWHW");
-                                res.render('login', {errors: errors.mapped(), oldData : req.body})
+                                res.render('users/login.ejs', {errors: errors.mapped(), oldData : req.body})
                             }
                         })
 
@@ -100,6 +100,41 @@ const usersController = {
         }
         res.redirect('/');
     },
+    update: (req,res)=>{
+        let userId = req.params.id;
+        let updatedUser;
+
+        User.update(
+            {
+                email: req.body.email,
+                first_name: req.body.first_name,
+                last_name: req.body.last_name
+            },
+            {
+                where: {id: userId}
+            })
+            // .then(()=>{
+            //     return updatedUser = User.findByPk(userId)
+            // })
+            .then(()=>{
+                    return res.redirect('/perfil')
+            })
+            .catch(err =>{console.log(err);});
+    },
+    profile: (req,res)=>{
+        let user;
+        let userPromm = User.findByPk(req.session.userToLog.id);
+        let coursesPromm = Course.findAll({
+            include: ["users"]
+        });
+
+        Promise
+        .all([userPromm, coursesPromm])
+            .then(([user, courses])=>{
+                return res.render('user_profile.ejs', {userLogged: user.dataValues, courses})
+            })
+            .catch((err)=>{console.log();})
+    }
 }
 
 module.exports = usersController;

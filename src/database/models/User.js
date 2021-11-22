@@ -1,3 +1,5 @@
+const User_Course = require("./User_Course");
+
 module.exports = (sequelize, dataTypes) => {
     let alias = "User";
     
@@ -32,11 +34,15 @@ module.exports = (sequelize, dataTypes) => {
     const User = sequelize.define(alias, cols, config);
 
     // Relational aspects
-    // User.associate = function(models){
-    //     User.hasMany(models.Course, {
-    //         as: 
-    //     })
-    // }
+    User.associate = function(models){
+        User.belongsToMany(models.Course, {
+            as: 'courses',
+            through: "user_course",
+            foreignKey: "id_course",
+            otherKey: "id_course",
+            timestamps: false
+        })
+    }
 
 
     return User;

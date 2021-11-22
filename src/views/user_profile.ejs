@@ -8,15 +8,10 @@
         <div class="profile_wrapper">
          
            <form action="/perfil/<%= userLogged.id %>?_method=PUT" method="POST" class="profile_container">
-              <h3>Perfil</h3> 
+              <h3>Perfil</h3>
               <button type="button" id="edit_button">Editar</button>
 
               <div class="user_data">
-                 
-                 <div class="label_input_pair_user">
-                    <label>Email:</label>
-                    <input name="email" id="user_data_input" type="email" value="<%=userLogged.email%>" disabled> 
-                 </div>
                  <div class="label_input_pair_user">
                     <p>Nombre:</p>
                     <input name="first_name" id="user_data_input" type="text" value="<%=userLogged.first_name%>" disabled> 
@@ -25,6 +20,11 @@
                     <p>Apellido:</p>
                     <input name="last_name" id="user_data_input" type="text" value="<%=userLogged.last_name%>" disabled> 
                  </div>
+                 <div class="label_input_pair_user">
+                  <label>Email:</label>
+                  <input name="email" id="user_data_input" type="email" value="<%=userLogged.email%>" disabled> 
+               </div>
+               
               </div>
 
               <button id="edit_user" class="inactive" type="submit">Confirmar cambios</button>
@@ -36,10 +36,12 @@
               <div class="user_courses">
                  <h3>Cursos:</h3>
                  <div class="courses_list">
-                    <% for(let i=0; i<courses.length; i++){%>
-                          <% if(courses[i].users_list.includes(userLogged.id)){%>
-                                <a class="user_course_a" href="/course/<%=courses[i].id%>"><%= courses[i].title%></a>
-                           <%} }%>
+                    <% for(let i=0; i<courses.length; i++){ %>
+                        <%for(let u=0; u<courses[i].users.length; u++){%>
+                          <%if(courses[i].users[u].id == (userLogged.id)){%>
+                                <a class="user_course_a" href="/course/<%=courses[i].id%>"><%= courses[i].name%></a>
+                           <%}%>
+                         <%} }%>
                  </div>
               </div>
            </form>
