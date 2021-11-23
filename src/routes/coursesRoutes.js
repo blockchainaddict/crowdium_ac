@@ -46,11 +46,13 @@ router.get('/courses/crear', authMiddleware, coursesControllerDB.createCourseFor
 router.post('/courses/crear', uploadFile.single('upload_img'), coursesControllerDB.createCourse);
 
 
-
 // ATENCION! SI ESTO ESTA ANTES ATAJA TODO LO QUE CONTENGA ALGO COMO ID
 // Probalo en singular
 router.get('/course/:id', authMiddleware, coursesControllerDB.course);
 router.post('/course/:id', coursesControllerDB.subscribeToCourse);
+
+// Edit courses
+router.get('/courses/edit/:id', coursesControllerDB.editCourseForm);
 
 router.get('/usercourse', coursesControllerDB.it);
 router.delete('/course/:id', coursesControllerDB.unsubscribeToCourse);

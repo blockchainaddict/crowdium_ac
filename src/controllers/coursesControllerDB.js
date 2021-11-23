@@ -121,6 +121,16 @@ const coursesController = {
 		})
 		.catch(err=>{res.send(err);})
 	},
+	editCourseForm: (req,res)=>{
+		let categoryProm = Categories.findAll();
+		let courseProm = Course.findByPk(req.params.id);
+
+		Promise.all([categoryProm, courseProm])
+		.then(([categories, course]) =>{
+			return res.render('courses/editCourse.ejs', {categories, course})
+		})
+		.catch(err=>res.send(err));
+	},
 
 	it: (req,res)=>{
 		User_Course.findAll()

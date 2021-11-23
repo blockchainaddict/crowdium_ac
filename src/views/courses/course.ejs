@@ -10,10 +10,12 @@
                         <div class="course_title">
                             <h2> <%= course.name %> </h2>
                         </div>
-                        <br>
+                        <a id="admin_link" href="/courses/edit/<%=course.id%>">Editar Curso</a>
+                        
                         <div class="course_description">
                             <p><%=course.description%></p>
                         </div>
+                        
                         <div class="individual_course_img">
                             <img src="/images/<%=course.id%>B.jpg" alt="course_img">
                         </div>
@@ -39,11 +41,6 @@
                                         <button type="submit" class="subscribe_to_course_btn">Subscribirme a este curso</button>
                                     </form>
                                     <% } %>
-                            
-
-                            
-                            
-                            
                         </div>
                     </div>
 
