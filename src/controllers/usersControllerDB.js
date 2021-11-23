@@ -131,6 +131,7 @@ const usersController = {
         Promise
         .all([userPromm, coursesPromm])
             .then(([user, courses])=>{
+                console.log(courses);
                 return res.render('users/user_profile.ejs', {userLogged: user.dataValues, courses})
             })
             .catch((err)=>{console.log();})

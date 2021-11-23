@@ -17,12 +17,24 @@
                         <div class="individual_course_img">
                             <img src="/images/<%=course.id%>B.jpg" alt="course_img">
                         </div>
-                        <div class="subscribe_to_course">
 
-                            <form class="form_plain" action="/subscribe-to-course" method="POST">
-                                <input class="hidden_input" type="text" name="course_id" id="course_id" value="<%=course.id%>">
-                                <button type="submit" class="subscribe_to_course_btn">Subscribirme a este curso</button>
-                            </form>
+                        <div class="subscribe_to_course">
+                            <!-- Crear CRUD para dessubscribirse DELETE entry -->
+                            <% if(course.users.length!=0){ %> 
+                                <% for(let i=0;i<course.users.length; i++){ %> 
+                                        <% if(course.users[i].id==userLogged.id){ %> 
+                                            <form class="form_plain" action="/course/<%=course.id%>?_method=DELETE" method="POST">
+                                                <input class="hidden_input" type="text" name="id_course" id="id_course" value="<%=course.id%>">
+                                                <button type="submit" class="subscribe_to_course_btn">Darme de baja de este curso</button>
+                                            </form>
+                                    <% } } } else { %> 
+                                        <form class="form_plain" action="/course/<%=course.id%>" method="POST">
+                                            <input class="hidden_input" type="text" name="id_course" id="id_course" value="<%=course.id%>">
+                                            <button type="submit" class="subscribe_to_course_btn">Subscribirme a este curso</button>
+                                        </form>
+                                        <% } %> 
+
+                            
                             
                             
                         </div>

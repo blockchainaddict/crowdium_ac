@@ -13,6 +13,7 @@ const { send } = require('process');
 const Videos = db.Video;
 const Course = db.Course;
 const Categories = db.Category;
+const User_Course = db.User_Course;
 
 // Methods
 const coursesController = {
@@ -39,7 +40,7 @@ const coursesController = {
 	},
 	course: (req,res) =>{
 		let id = req.params.id;
-		Course.findByPk(id)
+		Course.findByPk(id, {include: ['users']})
 			.then(course=>{
 				res.render('courses/course.ejs', {course, id, userLogged:req.session.userToLog});
 			})
@@ -84,10 +85,49 @@ const coursesController = {
 			return res.redirect('/courses');
 		})
 		.catch(err=>{res.send(err);})
-	}
+	},
 	// deleteCourse: (req,res)=>{
 	// 	Course.destroy()
 	// }
+
+	subscribeToCourse: (req,res)=>{
+		let id_user = req.session.userToLog;
+		let id_course = parseInt(req.body.id_course);
+
+		console.log("H EH EH E EE    ------------");
+		console.log(id_user);
+		console.log(id_course);
+		
+		User_Course.create({
+			id_user : id_user.id,
+			id_course
+		})
+		.then(()=>{
+			res.redirect('/miscursos');
+		})
+	},
+	unsubscribeToCourse: (req,res)=>{
+		let id_user = req.session.userToLog.id;
+		let id_course = req.params.id;
+		console.log(" HEREEE -------- " + id_user + ' ' + id_course);
+
+		User_Course.destroy({
+			where: {
+				[Op.and]: [{id_user: id_user}, {id_course: id_course}]
+			}
+		})
+		.then(()=>{
+			return res.redirect('/miscursos');
+		})
+		.catch(err=>{res.send(err);})
+	},
+
+	it: (req,res)=>{
+		User_Course.findAll()
+			.then(uc=>{
+				res.send(uc);
+			})
+	}
 
 
 }

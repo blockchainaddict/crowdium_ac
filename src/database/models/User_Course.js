@@ -26,8 +26,6 @@ module.exports = (sequelize, dataTypes) => {
     const User_Course = sequelize.define(alias, cols, config);
 
     // Relational aspects
-    // User_Course.associate = function(models){
-    //     User_Course.
 
 
     return User_Course;

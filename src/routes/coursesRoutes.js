@@ -37,7 +37,7 @@ const validateNewproject = [
 ]
 
 // INDEX
-router.get('/courses', authMiddleware, coursesControllerDB.courses);
+router.get('/courses', coursesControllerDB.courses);
 
 router.get('/courses/categories', authMiddleware, coursesControllerDB.categories);
 router.get('/courses/category/:id', authMiddleware, coursesControllerDB.category);
@@ -50,8 +50,10 @@ router.post('/courses/crear', uploadFile.single('upload_img'), coursesController
 // ATENCION! SI ESTO ESTA ANTES ATAJA TODO LO QUE CONTENGA ALGO COMO ID
 // Probalo en singular
 router.get('/course/:id', authMiddleware, coursesControllerDB.course);
+router.post('/course/:id', coursesControllerDB.subscribeToCourse);
 
-
+router.get('/usercourse', coursesControllerDB.it);
+router.delete('/course/:id', coursesControllerDB.unsubscribeToCourse);
 
 
 

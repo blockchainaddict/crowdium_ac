@@ -1,4 +1,4 @@
-const User_Course = require("./User_Course");
+// const User_Course = require("./User_Course");
 
 module.exports = (sequelize, dataTypes) => {
     let alias = "Course";
@@ -43,7 +43,7 @@ module.exports = (sequelize, dataTypes) => {
 
         Course.belongsToMany(models.User, {
             as: "users",
-            through: "user_course",
+            through: 'user_course',
             foreignKey: "id_course",
             otherKey: "id_user",
             timestamps: false
