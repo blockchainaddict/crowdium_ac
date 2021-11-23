@@ -112,6 +112,30 @@
     transform: scale(1.05);
 }
 
+.category_p{
+    font-size: 0.9em;
+    color: rgb(106, 105, 105);
+    margin-top: 0;
+}
+
+.special_p{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.special_p_p{
+    color: var(--blue);
+}
+.special_p_p:hover{
+    color: rgb(130, 130, 203);
+}
+
+.course_videos_wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 
 @media (max-width:1050px) {
     .course img{

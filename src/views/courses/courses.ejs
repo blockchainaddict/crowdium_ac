@@ -17,7 +17,7 @@
                             <p> <%= categories[i].name%> </p>
                         </div>
                         <div class="course_img">
-                            <a href="/courses/category/1"><img src="/images/-<%=categories[i].id%>.jpg" alt="course_img"></a> 
+                            <a href="/courses/category/<%=categories[i].id%>"><img src="/images/-<%=categories[i].id%>.jpg" alt="course_img"></a> 
                         </div>
                         <div class="category_description">
                             <p>Aca va una descripcion amena de la categoria</p>
@@ -51,18 +51,18 @@
 
             <h2 class="h2_courses">Cursos</h2>
             <div class="courses_container">
-
+                
                 <% for(let i=0;i<courses.length; i++){%>
                     <div class="course">
                         <div class="course_title">
-                            <p> <%= courses[i].name %></p>
+                            <p> <u><%= courses[i].name %></u> </p>
                         </div>
                         <div class="course_img">
                            <a href="/course/<%=courses[i].id%>">
                                 <img src="/images/<%=courses[i].id%>B.jpg" alt="course_img">
                             </a> 
                         </div>
-                        <p> Categoría: <%= courses[i].category.name%></p>   
+                        <p class="category_p"> Categoría: <%= courses[i].category.name%></p>   
                     </div>
 
                 <%} %>

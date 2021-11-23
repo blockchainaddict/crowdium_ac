@@ -20,6 +20,7 @@ const User = db.User;
 // encrypt password
 const bcrypt = require('bcryptjs');
 const { off } = require('process');
+const { course } = require('./coursesControllerDB');
 
 // Methods
 const usersController = {
@@ -143,10 +144,13 @@ const usersController = {
             userLogged = req.session.userToLog;
         }
 
-        Course.findAll({include: ['users']})
-        .then(courses =>{
-            return res.render('users/user_courses.ejs', {userLogged, courses});
-        })
+        let coursesProm = Course.findAll({include: ['users']});
+        let usersProm = User.findByPk(userLogged.id, {include: ['courses']})
+
+        Promise.all([coursesProm, usersProm])
+            .then(([courses, user]) => {
+                return res.render('users/user_courses.ejs', {userLogged, courses, user});
+            })
     }
 }
 

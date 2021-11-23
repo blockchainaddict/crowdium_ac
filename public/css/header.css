@@ -48,10 +48,11 @@ li{
 }
 
 #admin_link{
-    color: rgb(76, 76, 250);
+    color: rgb(177, 76, 250);
+    cursor: pointer;
 }
 #admin_link:hover{
-    color: rgb(245, 245, 103);
+    color: rgb(50, 99, 37);
 }
 
 .log{

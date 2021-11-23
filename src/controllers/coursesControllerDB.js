@@ -60,7 +60,7 @@ const coursesController = {
 		Promise
 		.all([promCategories, promCourses])
 			.then(([category, courses]) =>{
-				return res.render('courses/category.ejs', {category,courses, userLogged:req.session.userToLog});
+				return res.render('courses/category.ejs', {category, courses, userLogged:req.session.userToLog});
 			})
 			.catch((err)=>{console.log(err);})
 	},

@@ -7,20 +7,26 @@
         <div class="my_courses_wrapper">
             <h2 class="h2_courses">Mis Cursos</h2>
             <div class="my_courses_container">
-
-                <% for(let i=0;i<courses.length; i++){%>
-                    <%for(let u=0; u<courses[i].users.length; u++){%>
-                        <%if(courses[i].users[u].id == (userLogged.id)){%>
-                            <div class="course">
-                                <div class="course_title">
-                                    <p> <%= courses[i].name %> </p>
+                 
+                <% if(user.courses>0) {%>
+                    <% for(let i=0;i<courses.length; i++){%>
+                        <%for(let u=0; u<courses[i].users.length; u++){%>
+                            <%if(courses[i].users[u].id == (userLogged.id)){%>
+                                <div class="course">
+                                    <div class="course_title">
+                                        <p> <%= courses[i].name %> </p>
+                                    </div>
+                                    <div class="course_img">
+                                        <a href="/course/<%=courses[i].id%>"><img src="/images/<%=courses[i].id%>B.jpg" alt="course_img"></a> 
+                                    </div>
                                 </div>
-                                <div class="course_img">
-                                    <a href="/course/<%=courses[i].id%>"><img src="/images/<%=courses[i].id%>B.jpg" alt="course_img"></a> 
-                                </div>
-                            </div>
-                        <%} }%>
-                <%} %>
+                            <%} }%>
+                <%} }else{%>
+                    <div class="special_p">
+                        <p >No te subscribiste a ningún curso</p>
+                        <p > <a class="special_p_p" href="/courses">Explorá nuestros cursos</a> </p>
+                        
+                    </div><% } %> 
             
             </div>
         </div>

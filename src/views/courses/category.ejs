@@ -9,20 +9,23 @@
             <h2 class="h2_courses">Cursos de <%= category.name %> </h2>
             <div class="courses_container">
 
-                <% for(let i=0;i<courses.length; i++){%>
-                    <% if(courses[i].id_category == category.id){ %> 
-                    <div class="course">
-                        <div class="course_title">
-                            <p> <%= courses[i].name %></p>
+                <% if(category.length>0){%> 
+                    <% for(let i=0;i<courses.length; i++){%>
+                        <% if(courses[i].id_category == category.id){ %> 
+                        <div class="course">
+                            <div class="course_title">
+                                <p> <%= courses[i].name %></p>
+                            </div>
+                            <div class="course_img">
+                            <a href="/course/<%=courses[i].id%>">
+                                    <img src="/images/<%=courses[i].id%>B.jpg" alt="course_img">
+                                </a> 
+                            </div> 
                         </div>
-                        <div class="course_img">
-                           <a href="/course/<%=courses[i].id%>">
-                                <img src="/images/<%=courses[i].id%>B.jpg" alt="course_img">
-                            </a> 
-                        </div> 
-                    </div>
 
-                <%} }%>
+                    <% } } } else { %>
+                        <p>Todavía no hay cursos en esta categoría</p>
+                     <% } %>
                     
             
             </div>
