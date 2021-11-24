@@ -15,10 +15,14 @@
 								<label for="title">Título:</label>
 								<input type="text" name="title" id="title" >
 							</div>
-							<div class="label_input_pair">
+							<div class="label_input_pair" id="relative_input_pair">
 								<label for="url">Link: </label>
-								<input type="text" name="url" id="url" >
+								<input class="link_input" type="text" name="url" id="url" >
+								<div class="popup">
+									<span class="popuptext" id="myPopup">Copiar URL del browser directamente</span>
+								</div>
 							</div>
+							<p class="link_message">Usar URL completa (no embed ni share)</p>
 
 							<div class="label_input_pair">
                                 <label for="id_course">Curso:</label>
@@ -44,6 +48,8 @@
 		
 
 	</main>
+
+	
 
 	<%- include('../partials/footer')  %> 
 

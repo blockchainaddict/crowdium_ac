@@ -48,6 +48,11 @@ module.exports = (sequelize, dataTypes) => {
             otherKey: "id_user",
             timestamps: false
         });
+
+        Course.hasMany(models.Video, {
+            as: 'videos',
+            foreignKey: 'id_course'
+        })
     }
 
 

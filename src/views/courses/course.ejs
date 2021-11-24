@@ -51,9 +51,10 @@
         <div class="course_videos">
             <p>Videos del curso</p>
             <ul>
-                <% videos.forEach(video => {%>
-                    <li> <a target="blank" href="<%=video.url%>"><%= video.title %> </a> </li>
-                <% }) %> 
+                <% for(let i=0; i<course.videos.length; i++) {%>
+                    <li> <a target="blank" href="<%=course.videos[i].url%>"><%= course.videos[i].title %> </a> </li>
+                    <iframe width="560" height="315" src=<%= course.videos[i].url.replace('/watch?v=', '/embed/') %> title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <% } %> 
                 
             </ul>
         
@@ -61,6 +62,8 @@
     </div>
 
     </main>
+
+    
 
 
 <%- include('../partials/footer')%>

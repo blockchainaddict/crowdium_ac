@@ -40,7 +40,7 @@ const coursesController = {
 	},
 	course: (req,res) =>{
 		let id = req.params.id;
-		let courseProm = Course.findByPk(id, {include: ['users']});
+		let courseProm = Course.findByPk(id, {include: ['users', 'videos']});
 		let videoProm = Videos.findAll();
 			
 		Promise.all([courseProm, videoProm])
