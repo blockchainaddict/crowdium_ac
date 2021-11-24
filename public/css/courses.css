@@ -135,6 +135,17 @@
     justify-content: center;
 }
 
+.course_videos{
+    text-align: center;
+}
+
+.video_title_inside_course{
+    font-size: 0.8em;
+    text-align: center;
+    width: 80%;
+    height: 36px;
+}
+
 /* Edit image on edit course page */
 
 .edit_image{

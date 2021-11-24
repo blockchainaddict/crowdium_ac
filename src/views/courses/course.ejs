@@ -49,14 +49,23 @@
 
     <div class="course_videos_wrapper">
         <div class="course_videos">
+            
             <p>Videos del curso</p>
-            <ul>
-                <% for(let i=0; i<course.videos.length; i++) {%>
-                    <li> <a target="blank" href="<%=course.videos[i].url%>"><%= course.videos[i].title %> </a> </li>
-                    <iframe width="560" height="315" src=<%= course.videos[i].url.replace('/watch?v=', '/embed/') %> title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <% } %> 
+
+            <div class="video_container">
                 
-            </ul>
+
+                    <% for(let i=0; i<course.videos.length; i++) {%>
+                        <div class="video_container_course">
+                            <iframe width="560" height="315" src=<%= course.videos[i].url.replace('/watch?v=', '/embed/') %> title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <p class="video_title_inside_course"> <a target="blank" href="<%=course.videos[i].url%>"><%= course.videos[i].title %> </a> </p>
+
+                        </div>
+                    <% } %> 
+                    
+                
+            </div>
+           
         
         </div>
     </div>

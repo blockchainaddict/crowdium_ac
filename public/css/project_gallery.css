@@ -39,6 +39,13 @@
     justify-content: center;
     flex-wrap: wrap;
 }
+.video_container_course{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 297px;
+}
 
 iframe{
     height: 10rem;
