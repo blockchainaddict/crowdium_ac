@@ -8,7 +8,7 @@
             <h2 class="h2_courses">Mis Cursos</h2>
             <div class="my_courses_container">
                  
-                <% if(user.courses>0) {%>
+                <% if(user.courses.length>0) {%>
                     <% for(let i=0;i<courses.length; i++){%>
                         <%for(let u=0; u<courses[i].users.length; u++){%>
                             <%if(courses[i].users[u].id == (userLogged.id)){%>

@@ -12,6 +12,7 @@ const { send } = require('process');
 // Call each model
 const Videos = db.Video;
 const Course = db.Course;
+const User = db.User;
 const Categories = db.Category;
 const User_Course = db.User_Course;
 
@@ -40,12 +41,15 @@ const coursesController = {
 	},
 	course: (req,res) =>{
 		let id = req.params.id;
+		let userLogged = req.session.userToLog;
+		
 		let courseProm = Course.findByPk(id, {include: ['users', 'videos']});
+		let userProm = User.findByPk(userLogged.id, {include: ['courses']});
 		let videoProm = Videos.findAll();
 			
-		Promise.all([courseProm, videoProm])
-		.then(([course, videos])=>{
-				res.render('courses/course.ejs', {course, videos, id, userLogged:req.session.userToLog});
+		Promise.all([courseProm, userProm, videoProm])
+		.then(([course, user, videos])=>{
+				res.render('courses/course.ejs', {course, user, videos, id, userLogged:req.session.userToLog});
 			})
 	},
 	userCourses: (req,res) =>{
@@ -103,11 +107,11 @@ const coursesController = {
 	},
 
 	subscribeToCourse: (req,res)=>{
-		let id_user = req.session.userToLog;
+		let userLogged = req.session.userToLog;
 		let id_course = parseInt(req.body.id_course);
 		
 		User_Course.create({
-			id_user : id_user.id,
+			id_user: userLogged.id,
 			id_course
 		})
 		.then(()=>{
