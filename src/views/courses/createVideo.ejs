@@ -1,0 +1,51 @@
+<%- include("../partials/head") %>
+
+	<%- include("../partials/header") %>
+
+	<main>
+		<div class="main_wrapper_n">
+			<div class="main_container">
+				<section class="index_section1">
+					<h2>Bienvenido a <br> Crowdium Academy</h2>
+					
+					<form class="project_input_form" action="/videos/crear" method="POST">
+						<fieldset class="project_i_f_field" id="fieldset1">
+							<legend>Agregar videos</legend>
+							<div class="label_input_pair">
+								<label for="title">Título:</label>
+								<input type="text" name="title" id="title" >
+							</div>
+							<div class="label_input_pair">
+								<label for="url">Link: </label>
+								<input type="text" name="url" id="url" >
+							</div>
+
+							<div class="label_input_pair">
+                                <label for="id_course">Curso:</label>
+								<select name="id_course" id="id_course" required>
+                                    <option value="" disabled selected> Seleccione Curso</option>
+                                    <% courses.forEach(course =>{%>
+                                        <option value="<%=course.id%>" > <%=course.id%>. <%= course.name %></option>
+                                    <%}); %> 
+                                </select>
+								
+							</div>
+
+						</fieldset>
+
+
+						<button class="login_button log" type="submit">Agregar video</button>
+			
+					</form>
+
+				</section>
+			</div>
+		</div>
+		
+
+	</main>
+
+	<%- include('../partials/footer')  %> 
+
+
+                       

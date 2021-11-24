@@ -9,7 +9,7 @@
             <h2 class="h2_courses">Cursos de <%= category.name %> </h2>
             <div class="courses_container">
 
-                <% if(category.length>0){%> 
+                <% if(category.courses.length>0){%> 
                     <% for(let i=0;i<courses.length; i++){%>
                         <% if(courses[i].id_category == category.id){ %> 
                         <div class="course">

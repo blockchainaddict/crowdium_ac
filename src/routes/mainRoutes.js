@@ -66,7 +66,6 @@ router.get('/dashboard', mainController.dashboard);
 // COURSES
 router.get('/gallery', coursesController.gallery);
 
-// router.get('/start-here', authMiddleware, coursesController.startHere);
 router.get('/start-here', authMiddleware, coursesControllerDB.startHere);
 
 module.exports = router;

@@ -8,7 +8,8 @@
 				<section class="index_section1">
 					<h2>Bienvenido a <br> Crowdium Academy</h2>
 					
-					<form class="project_input_form" action="/courses/crear" method="POST" enctype="multipart/form-data">
+					<form class="project_input_form" action="/courses/update/<%= course.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+
 						<fieldset class="project_i_f_field" id="fieldset1">
 							<legend>Crear curso</legend>
 							<div class="label_input_pair">
@@ -23,13 +24,12 @@
 							<div class="label_input_pair">
                                 <label for="id_category">Categoría:</label>
 								<select name="id_category" id="id_category" required>
-                                    <option value="" disabled selected> Seleccione categoría</option>
-                                    <% categories.forEach(category =>{%>
-                                        <option value="<%=category.id%>" <% if(course.id_category==category.id){%> <%='selected'%> <%} %> > <%=category.id%>. <%= category.name %></option>
-                                    <%}); %> 
+                                    <% categories.forEach(category => { %>
+                                        <option value="<%=category.id%>" <% if(course.id_category==category.id){%> <%='selected'%> <% } %>> <%=category.id%>. <%= category.name %></option>
+                                    <% }) %>
                                 </select>
-								
 							</div>
+
                             <!-- Imagen MULTER -->
                             <div class="upload_file_edit">
                                 <p>Imagen</p>
@@ -44,10 +44,9 @@
                                     <label for="upload_img">Cambiar imagen</label>
                                 </div>
                             </div>
-
-
 						</fieldset>
-						<button class="login_button log" type="submit">Guardar datos editados</button>
+
+						<button class="login_button log" type="submit">Guardar cambios</button>
 			
 					</form>
 

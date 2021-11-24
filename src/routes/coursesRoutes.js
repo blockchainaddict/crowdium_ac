@@ -10,12 +10,12 @@ const coursesControllerDB = require('../controllers/coursesControllerDB');
 const multer = require('multer');
 const storage = multer.diskStorage({
     destination: function(req, file, cb){
-        let folder = ('./public/images');
+        let folder = ('./public/images/course_images');
         cb(null, folder);
     },
     filename: function(req, file, cb){
-        const productImageFile = 'product-' + Date.now() + path.extname(file.originalname);
-        cb(null, productImageFile);
+        const courseImageFile = 'course-' + Date.now() + path.extname(file.originalname);
+        cb(null, courseImageFile);
     }
 })
 
@@ -45,6 +45,9 @@ router.get('/courses/category/:id', authMiddleware, coursesControllerDB.category
 router.get('/courses/crear', authMiddleware, coursesControllerDB.createCourseForm);
 router.post('/courses/crear', uploadFile.single('upload_img'), coursesControllerDB.createCourse);
 
+// Crear videos
+router.get('/videos/crear', coursesControllerDB.createVideoForm);
+router.post('/videos/crear', coursesControllerDB.createVideo);
 
 // ATENCION! SI ESTO ESTA ANTES ATAJA TODO LO QUE CONTENGA ALGO COMO ID
 // Probalo en singular
@@ -53,10 +56,10 @@ router.post('/course/:id', coursesControllerDB.subscribeToCourse);
 
 // Edit courses
 router.get('/courses/edit/:id', coursesControllerDB.editCourseForm);
+router.put('/courses/update/:id', uploadFile.single('upload_img'), coursesControllerDB.editCourse);
 
 router.get('/usercourse', coursesControllerDB.it);
 router.delete('/course/:id', coursesControllerDB.unsubscribeToCourse);
-
 
 
 module.exports = router;

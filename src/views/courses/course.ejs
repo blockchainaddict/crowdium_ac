@@ -11,6 +11,7 @@
                             <h2> <%= course.name %> </h2>
                         </div>
                         <a id="admin_link" href="/courses/edit/<%=course.id%>">Editar Curso</a>
+                        <a id="admin_link" href="/videos/crear">Agregar videos al Curso</a>
                         
                         <div class="course_description">
                             <p><%=course.description%></p>
@@ -48,13 +49,12 @@
 
     <div class="course_videos_wrapper">
         <div class="course_videos">
-            <p>Lista/galeria de videos del curso</p>
+            <p>Videos del curso</p>
             <ul>
-                <li>Video 1</li>
-                <li>Video 2</li>
-                <li>Video 3</li>
-                <li>Video 4</li>
-                <li>Video 5</li>
+                <% videos.forEach(video => {%>
+                    <li> <a target="blank" href="<%=video.url%>"><%= video.title %> </a> </li>
+                <% }) %> 
+                
             </ul>
         
         </div>

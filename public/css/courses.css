@@ -82,8 +82,6 @@
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .5);
 }
 
-
-
 .category_description{
     width: 22vw;
     text-align: center;
@@ -96,6 +94,7 @@
 
 .course_description{
     margin-top: 30px;
+    width: 50vw;
 }
 
 .subscribe_to_course_btn{

@@ -51,6 +51,7 @@ li{
     color: rgb(177, 76, 250);
     cursor: pointer;
 }
+
 #admin_link:hover{
     color: rgb(50, 99, 37);
 }

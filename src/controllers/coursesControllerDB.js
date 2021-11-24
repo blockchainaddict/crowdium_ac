@@ -40,9 +40,12 @@ const coursesController = {
 	},
 	course: (req,res) =>{
 		let id = req.params.id;
-		Course.findByPk(id, {include: ['users']})
-			.then(course=>{
-				res.render('courses/course.ejs', {course, id, userLogged:req.session.userToLog});
+		let courseProm = Course.findByPk(id, {include: ['users']});
+		let videoProm = Videos.findAll();
+			
+		Promise.all([courseProm, videoProm])
+		.then(([course, videos])=>{
+				res.render('courses/course.ejs', {course, videos, id, userLogged:req.session.userToLog});
 			})
 	},
 	userCourses: (req,res) =>{
@@ -55,7 +58,7 @@ const coursesController = {
 			})
 	},
 	category: (req,res) =>{
-		let promCategories = Categories.findByPk(req.params.id);
+		let promCategories = Categories.findByPk(req.params.id, {include: ['courses']});
 		let promCourses = Course.findAll();
 		Promise
 		.all([promCategories, promCourses])
@@ -73,30 +76,35 @@ const coursesController = {
 	},
 
 	createCourse: (req,res)=>{
-		const { name, description, id_category } = req.body;
-
+		const { name, description, id_category, title, url } = req.body;
+		
 		Course.create({
 			name,
 			description,
 			id_category: parseInt(id_category),
-			course_img: req.file ? req.file.upload_img : 'default_course_img.jpg'
+			course_img: req.file ? req.file.filename : 'default_course_img.jpg'
 		})
 		.then(()=>{
 			return res.redirect('/courses');
 		})
-		.catch(err=>{res.send(err);})
+		.catch(err=>{res.send(err);});
+		
 	},
-	// deleteCourse: (req,res)=>{
-	// 	Course.destroy()
-	// }
+	// NO ESTA TESTEADO
+	deleteCourse: (req,res)=>{
+		Course.destroy({ 
+		where: {id: req.params.id},
+		truncate: true, 
+		restartIdentity: true
+		})
+		.then(()=>{
+			return res.redirect('/courses');
+		})
+	},
 
 	subscribeToCourse: (req,res)=>{
 		let id_user = req.session.userToLog;
 		let id_course = parseInt(req.body.id_course);
-
-		console.log("H EH EH E EE    ------------");
-		console.log(id_user);
-		console.log(id_course);
 		
 		User_Course.create({
 			id_user : id_user.id,
@@ -109,7 +117,6 @@ const coursesController = {
 	unsubscribeToCourse: (req,res)=>{
 		let id_user = req.session.userToLog.id;
 		let id_course = req.params.id;
-		console.log(" HEREEE -------- " + id_user + ' ' + id_course);
 
 		User_Course.destroy({
 			where: {
@@ -130,6 +137,51 @@ const coursesController = {
 			return res.render('courses/editCourse.ejs', {categories, course})
 		})
 		.catch(err=>res.send(err));
+	},
+	editCourse: (req,res)=>{
+		// const { name, description, id_category } = req.body;
+
+		let courseId = req.params.id;
+		console.log('- - - - - ' + req.body.name);
+
+		Course.update({
+			name: req.body.name,
+			description: req.body.description,
+			id_category: parseInt(req.body.id_category),
+			course_img: req.file ? req.file.upload_img : 'default_course_img.jpg'
+		},
+		{
+			where: {id: courseId}
+		})
+		.then(()=>{
+			return res.redirect('/courses');
+		})
+		.catch(err=>{res.send(err);})
+
+	},
+
+	createVideoForm: (req,res)=>{
+		Course.findAll()
+		.then((courses)=>{
+			return res.render('courses/createVideo.ejs', {courses});
+		})
+		.catch(err=>res.send(err));
+		
+	},
+	createVideo:(req,res)=>{
+		const { title, url, id_course } = req.body;
+		console.log('--- --- --- ' + id_course);
+		
+		Videos.create({
+			title,
+			url,
+			id_course: parseInt(id_course)
+		})
+		.then(()=>{
+			return res.redirect('/courses')
+		})
+		.catch(err=>{res.send(err)});
+	
 	},
 
 	it: (req,res)=>{
