@@ -180,9 +180,9 @@ main{
 
 .badge_logo{
     position: relative;
-    left: 28vw;
+    left: 40vw;
     bottom: 50px;
-    width: 50vw;
+    width: 40vw;
 }
 
 .badge_logo img{
@@ -200,6 +200,16 @@ main{
     justify-content: center;
     align-items: center;
     margin-bottom: 30px;
+}
+
+/* TEAM BANNER */
+.team_banner{
+    display: flex;
+}
+
+.team{
+    display: flex;
+    width: 30vw;
 }
 
 @keyframes gradient {
