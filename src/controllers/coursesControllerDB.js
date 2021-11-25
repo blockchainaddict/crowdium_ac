@@ -52,9 +52,6 @@ const coursesController = {
 				res.render('courses/course.ejs', {course, user, videos, id, userLogged:req.session.userToLog});
 			})
 	},
-	userCourses: (req,res) =>{
-		res.render('user_courses.ejs', {courses, userLogged:req.session.userToLog});
-	},
 	categories: (req,res) =>{
 		Categories.findAll()
 			.then(categories =>{

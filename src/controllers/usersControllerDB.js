@@ -144,7 +144,7 @@ const usersController = {
             userLogged = req.session.userToLog;
         }
 
-        let coursesProm = Course.findAll({include: ['users']});
+        let coursesProm = Course.findAll({include: ['users', 'category']});
         let usersProm = User.findByPk(userLogged.id, {include: ['courses']})
 
         Promise.all([coursesProm, usersProm])

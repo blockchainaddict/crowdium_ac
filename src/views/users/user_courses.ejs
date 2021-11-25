@@ -19,6 +19,10 @@
                                     <div class="course_img">
                                         <a href="/course/<%=courses[i].id%>"><img src="/images/<%=courses[i].id%>B.jpg" alt="course_img"></a> 
                                     </div>
+
+                                    <p class="category_p"> Categoría: <%= courses[i].category.name%></p>   
+
+
                                 </div>
                             <%} }%>
                 <%} }else{%>

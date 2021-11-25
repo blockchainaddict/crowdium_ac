@@ -75,7 +75,7 @@ li{
     color: rgb(142, 165, 233);
 }
 
-@media (max-width:1018px){
+@media (max-width:1092px){
     .user_links{
         width: auto;
         justify-content: left;
