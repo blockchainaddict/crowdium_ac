@@ -158,16 +158,28 @@ main{
 
 .about_wrapper{
     display: flex;
-    justify-content: center;
     margin: 80px;
     border-top: 1px solid var(--graylight);
     border-bottom: 1px solid var(--graylight);
-    padding: 8px 0 0 0;
+    padding: 8px 0 60px 0;
 }
 
 .about{
-    text-align: center;
+    /* text-align: center; */
     width: 70%;
+    margin-left: 30vw;
+}
+.about h2{
+    text-align: right;
+}
+
+.about_container{
+    display: flex;
+}
+.about_container img{
+    width: 30vw;
+    height: 100%;
+    margin-left: 3vw;
 }
 
 .about h2, h3, p{
@@ -177,6 +189,19 @@ main{
 .about p{
     text-align: justify;
 }
+
+.about_ul{
+    color: var(--blue);
+}
+
+.trans-png1{
+    position: absolute;
+    top: 850px;
+    left: 50px;
+    width: 30%;
+    z-index: -10;
+}
+
 
 .badge_logo{
     position: relative;
@@ -194,6 +219,12 @@ main{
     width: 150px;
     text-align: center;
 }
+.button:hover{
+    cursor: pointer;
+}
+.log:hover{
+    cursor: pointer;
+}
 
 .home_button_wrapper{
     display: flex;
@@ -203,13 +234,42 @@ main{
 }
 
 /* TEAM BANNER */
-.team_banner{
-    display: flex;
+
+.team_banner_wrapper{
+    margin: 50px 0;
+    padding: 50px 0;
+    background-image: linear-gradient(to bottom, rgb(87, 164, 223), rgb(255, 255, 255));
+}
+.team_banner_wrapper h2{
+    text-align: center;
 }
 
-.team{
+.team_banner{
     display: flex;
-    width: 30vw;
+    margin: 50px 80px;
+}
+
+
+.team{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 30px;
+    text-align: left;
+}
+
+.team h4{
+    margin: 0 20px 20px;
+}
+.team p{
+    font-size: 0.9em;
+    color: rgb(63, 63, 63);
+    margin: 0 20px;
+}
+
+.team img{
+    width: 18vw;
+    border-radius: 10px;
+    box-shadow: 0 0.6rem 1rem rgb(74, 74, 74);
 }
 
 @keyframes gradient {
@@ -310,6 +370,40 @@ main{
     font-size: .8em;
 }
 
+@media (max-width:1080px){
+    .team img{
+        width: 250px;
+    }
+    .team_banner {
+        flex-wrap: wrap;
+    }
+    .about_wrapper{
+        justify-content: center;
+    }
+    .about{
+        margin-left: 0;
+    }
+    .about_container{
+        flex-direction: column;
+        align-items: center;
+    }
+    .about_container img{
+        margin-left: 0;
+    }
+
+    .trans-png1{
+        display: none;
+    }
+
+    .about h2{
+        text-align: center;
+        font-size: 1em;
+    }
+
+    
+
+}
+
 
 
 @media (max-width:693px){
@@ -332,6 +426,10 @@ main{
     .about p{
         font-size: .9em;
     }
+    .about_container img{
+        width: 70vw;
+        height: 100%;
+    }
     .badge_logo{
         display: none;
     }
@@ -343,6 +441,15 @@ main{
 
         background-attachment:inherit;
     }
+
+    .team_banner{
+        margin: 30px 0;
+    }
+
+    .team img{
+        width: 200px;
+    }
+    
 
     /* .background-image{
         display: none;
@@ -394,6 +501,16 @@ main{
         text-align: center;
     }
 
+    .team{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .team_text{
+        margin: 10px 0;
+    }
+
 }
 
 @media (max-width:420px){
@@ -441,3 +558,5 @@ main{
         top: 0;
         left: 0;
 }
+
+

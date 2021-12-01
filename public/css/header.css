@@ -73,6 +73,7 @@ li{
 
 .user_link:hover a{
     color: rgb(142, 165, 233);
+    cursor: pointer;
 }
 
 @media (max-width:1092px){
