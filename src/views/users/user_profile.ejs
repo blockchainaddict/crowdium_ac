@@ -9,6 +9,10 @@
          
            <form action="/perfil/<%= userLogged.id %>?_method=PUT" method="POST" class="profile_container">
               <h3>Perfil</h3>
+              <div class="avatar_profile">
+                 <img class="avatar" src="https://avatars.dicebear.com/api/initials/<%=userLogged.first_name%>.svg" alt="Avatar">
+               </div>
+
               <button type="button" id="edit_button">Editar</button>
 
               <div class="user_data">

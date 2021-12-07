@@ -27,12 +27,12 @@ const usersController = {
 	users: (req,res) =>{
         User.findAll()
 			.then(users=>{
-				return res.render('users/users.ejs', {users, userLogged:req.session.userToLog});
+				return res.render('users/users.ejs', {users, userLogged:req.session.userToLog, pageInfo: req.originalUrl});
 			})
 			.catch((err) => {console.log(err)});
 	},
     createUserForm: (req,res)=>{
-        res.render('users/createUser.ejs');
+        res.render('users/createUser.ejs', {pageInfo: req.originalUrl});
     },
     createUser: (req,res)=>{
         const { first_name, last_name, email, password } = req.body;
@@ -48,7 +48,7 @@ const usersController = {
             .catch((err)=> res.send(err));
     },
     loginForm: (req,res)=>{
-        res.render('users/login.ejs');
+        res.render('users/login.ejs', {pageInfo: req.originalUrl});
     },
     login: (req,res)=>{
         let errors = validationResult(req);
@@ -75,7 +75,7 @@ const usersController = {
                                     req.session.userToLog = userToLog;
                     
                                     if(req.body.remember != undefined){
-                                        res.cookie('rememberAccount', userToLog.email, {maxAge: 600000});
+                                        res.cookie('rememberAccount', userToLog.email, {maxAge: 1000 * 60 * 60}); //cookie lasts 1 hour
                                     }
                                     else{
                                         console.log('do not remember account');
@@ -87,7 +87,7 @@ const usersController = {
                             else{
                                 console.log(errors.mapped());
                                 console.log("WHWHW");
-                                res.render('users/login.ejs', {errors: errors.mapped(), oldData : req.body})
+                                res.render('users/login.ejs', {errors: errors.mapped(), oldData: req.body, pageInfo: req.originalUrl})
                             }
                         })
 
@@ -133,7 +133,7 @@ const usersController = {
         .all([userPromm, coursesPromm])
             .then(([user, courses])=>{
                 console.log(courses);
-                return res.render('users/user_profile.ejs', {userLogged: user.dataValues, courses})
+                return res.render('users/user_profile.ejs', {userLogged: user.dataValues, courses, pageInfo: req.originalUrl})
             })
             .catch((err)=>{console.log();})
     },
@@ -149,7 +149,7 @@ const usersController = {
 
         Promise.all([coursesProm, usersProm])
             .then(([courses, user]) => {
-                return res.render('users/user_courses.ejs', {userLogged, courses, user});
+                return res.render('users/user_courses.ejs', {userLogged, courses, user, pageInfo: req.originalUrl});
             })
     }
 }

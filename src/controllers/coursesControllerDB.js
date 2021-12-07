@@ -26,7 +26,7 @@ const coursesController = {
 
 		Promise.all([coursesProm, categoriesProm])
 			.then(([courses, categories])=>{
-				return res.render('courses/courses.ejs', {courses, categories, userLogged:req.session.userToLog});
+				return res.render('courses/courses.ejs', {courses, categories, userLogged:req.session.userToLog, pageInfo: req.originalUrl});
 			})
 			.catch((err) => {console.log(err)});
 	},
@@ -36,7 +36,7 @@ const coursesController = {
     startHere: (req,res) =>{
         Course.findAll()
             .then(course =>{
-                res.render('start_here.ejs', {course, userLogged:req.session.userToLog});
+                res.render('start_here.ejs', {course, userLogged:req.session.userToLog, pageInfo: req.originalUrl});
             });
 	},
 	course: (req,res) =>{
@@ -49,7 +49,7 @@ const coursesController = {
 			
 		Promise.all([courseProm, userProm, videoProm])
 		.then(([course, user, videos])=>{
-				res.render('courses/course.ejs', {course, user, videos, id, userLogged:req.session.userToLog});
+				res.render('courses/course.ejs', {course, user, videos, id, userLogged:req.session.userToLog, pageInfo: req.originalUrl});
 			})
 	},
 	categories: (req,res) =>{
@@ -72,7 +72,7 @@ const coursesController = {
 	createCourseForm: (req,res)=>{
 		Categories.findAll()
 			.then(categories =>{
-				return res.render('courses/createCourse.ejs', {categories})
+				return res.render('courses/createCourse.ejs', {categories, userLogged:req.session.userToLog, pageInfo: req.originalUrl})
 			});
 	},
 
@@ -99,7 +99,7 @@ const coursesController = {
 		restartIdentity: true
 		})
 		.then(()=>{
-			return res.redirect('/courses');
+			return res.redirect('/courses', {pageInfo: req.originalUrl});
 		})
 	},
 
@@ -135,7 +135,7 @@ const coursesController = {
 
 		Promise.all([categoryProm, courseProm])
 		.then(([categories, course]) =>{
-			return res.render('courses/editCourse.ejs', {categories, course})
+			return res.render('courses/editCourse.ejs', {categories, course, pageInfo: req.originalUrl})
 		})
 		.catch(err=>res.send(err));
 	},
@@ -164,7 +164,7 @@ const coursesController = {
 	createVideoForm: (req,res)=>{
 		Course.findAll()
 		.then((courses)=>{
-			return res.render('courses/createVideo.ejs', {courses});
+			return res.render('courses/createVideo.ejs', {courses, pageInfo: req.originalUrl});
 		})
 		.catch(err=>res.send(err));
 		

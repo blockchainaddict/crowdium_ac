@@ -50,3 +50,16 @@
 .inactive{
     display: none;
 }
+
+
+.profile_wrapper h3{
+    margin: 0;
+}
+.avatar_profile{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+.avatar_profile img{
+    width: 100px;
+}

@@ -11,14 +11,14 @@
             </div>
 
             <ul class="user_links">
-                <li class="user_link"> <a href="/courses">Explorar</a> </li>
+                <li class="user_link" <%if(pageInfo=='/courses'){%>id=<%="underlined"%> <%} %>> <a href="/courses">Explorar</a> </li>
                 <li class="user_link"> <a href="https://www.crowdium.com.ar/nosotros">Sobre nosotros</a> </li>
 
                 <% if(locals.userLogged){%>
                     <!-- Only Admin -->
-                    <li class="user_link">  <a id="admin_link" href="/courses/crear">Crear curso</a> </li>
+                    <li class="user_link" <%if(pageInfo=='/courses/crear'){%>id=<%="underlined"%> <%} %>>  <a id="admin_link" href="/courses/crear">Crear curso</a> </li>
                     <!-- All -->
-                    <li class="user_link">  <a href="/miscursos">Mis cursos</a> </li>
+                    <li class="user_link" <%if(pageInfo=='/miscursos'){%>id=<%="underlined"%> <%} %>>  <a href="/miscursos">Mis cursos</a> </li>
                     <li class="user_link">  <a href="/perfil"> <i class="far fa-user"></i>  <%= userLogged.email %> </a> </li>
                     <li class="user_link log"> <a href="/logout">Cerrar sesión</a> </li>
                     

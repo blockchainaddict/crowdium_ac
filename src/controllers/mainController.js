@@ -7,7 +7,7 @@ const courses = JSON.parse(fs.readFileSync(coursesLocation, 'utf-8'));
 
 const mainController = {
 	index: (req,res) =>{
-		res.render("index.ejs", {userLogged:req.session.userToLog});
+		res.render("index.ejs", {userLogged:req.session.userToLog, pageInfo: req.originalUrl});
 	},
 	
 	dashboard: (req,res) =>{

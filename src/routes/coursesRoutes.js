@@ -25,6 +25,8 @@ const uploadFile = multer({storage: storage});
 const { body, check } = require('express-validator');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
+// const userLoggedMiddleware = require('../middlewares/userLoggedMiddleware');
+
 
 
 const validateNewproject = [

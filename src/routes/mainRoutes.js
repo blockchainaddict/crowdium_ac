@@ -31,6 +31,8 @@ const { body, check } = require('express-validator');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
 const { userCourses } = require('../controllers/coursesController');
+const userLoggedMiddleware = require('../middlewares/userLoggedMiddleware');
+
 
 const validateLogin = [
     check('email').notEmpty().withMessage("Can't be empty"),
